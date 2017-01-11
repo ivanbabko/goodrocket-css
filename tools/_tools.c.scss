@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+// ============================================================================
+//
+// COLOR FUNCTION
+//
+// ============================================================================
+
+// Provides access to colors in $color-palette map by name and tone/shade.
+//
+// @require {map} $color-palette
+//
+// @example scss
+//   .element {
+//     background-color: c('warning'); // Uses base warning color.
+//   }
+//
+// @example scss
+//   .element {
+//     background-color: c('primary', 'light'); // Uses light variation.
+//   }
+
+
+@function c($color-name, $color-variant: 'base') {
+  $color: map-get(map-get($color-palette, $color-name),$color-variant);
+  @if $color {
+      @return $color;
+  } @else {
+      @warn "The value #{$color-name} is not in the $color-palette map";
+      @return null;
+  }
+}

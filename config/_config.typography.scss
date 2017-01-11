@@ -1,0 +1,62 @@
+// ============================================================================
+//
+// TYPOGRAPHY SETTINGS
+//
+// ============================================================================
+
+
+// Base
+// ============================================================================
+
+// Base font size set on the root element. Value is defined in pixels. 
+// It will be converted to more appropriate units in the code.
+// Type scale is derived from this setting.
+
+$font-size-base						: 16px;
+
+
+
+// Type scale
+// ============================================================================
+
+// Global map of font-sizes. 
+// Accessed via custom fs() function in CSS, e.g.: `font-size: fs(h1);`
+// Every value in this list gets a utility class, e.g.: `<div class="u-h1">`
+
+$type-scale: (
+
+  'giga'  : 5rem,
+  'mega'  : 4rem,
+  
+  'h1'    : 3rem,
+  'h2'    : 2.25rem,
+  'h3'    : 1.5rem,
+  'h4'    : 1.25rem,
+
+  'base'  : 1rem,
+
+  'h5'    : 0.875rem,
+  'h6'    : 0.75rem,
+
+);
+
+
+
+// Line heights
+// ============================================================================
+
+$line-height-copy         : 1.5;
+$line-height-title        : 1.25;
+$line-height-solid        : 1;
+
+
+
+// Typefaces
+// ============================================================================
+
+$font-family-primary			: Helvetica, sans-serif;
+$font-family-secondary		: Georgia, serif;
+$font-family-tertiary 		: Courier, monospace;
+
+
+

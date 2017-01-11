@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+// ============================================================================
+//
+// Z-INDEX FUNCTION
+//
+// ============================================================================
+
+// Provides access to common z-index values defined in $z-layers map.
+//
+// @require {map} $z-layers
+//
+// @example scss
+//   .element {
+//     z-index: z('tooltip');
+//   }
+//
+// Usage with nested contexts:
+//
+// @example map
+//   $z-layers: (
+//     default: 1,
+//     modal: (
+//       base:  100,
+//       close:   5 
+//     ),
+//   );
+//
+// @example scss
+//   .element {
+//     z-index: z('modal', 'close');
+//   }
+
+@function map-has-nested-keys($map, $keys...) {
+  @each $key in $keys {
+    @if not map-has-key($map, $key) {
+      @return false;
+    }
+    $map: map-get($map, $key);
+  }
+  
+  @return true;
+}
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+ 
+  @return $map;
+}
+
+@function z($layers...) {
+  @if not map-has-nested-keys($z-layers, $layers...) {
+    @warn "No layer found for `#{inspect($layers...)}` in $z-layers map. Property omitted.";
+  }
+ 
+  @return map-deep-get($z-layers, $layers...);
+}

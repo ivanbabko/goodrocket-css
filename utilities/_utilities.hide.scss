@@ -1,0 +1,57 @@
+/* ==========================================================================
+
+   @HIDE
+
+   ========================================================================== */
+
+/**
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.u-hide-visually {
+	@include hide-visually;
+}
+
+
+/**
+ * Hide visually and from screen readers.
+ */
+
+.u-hide {
+	display: none !important;
+}
+
+
+
+// Responsive hiding
+// ============================================================================
+
+// Generate responsive utilities to hide content? 
+$responsive-hiding: true !default;
+
+// Sass map of breakpoints used to generate responsive helpers.
+$hide-breakpoints: $breakpoints !default;
+
+// The below loop will generate us a suite of classes like:
+// 
+//   .u-hide-on-tablet-and-up {}
+//   .u-hide-until-tablet {}
+
+@if ($responsive-hiding == true) {
+
+  @each $bp-name, $bp-value in $hide-breakpoints {
+
+    @include mq($from: $bp-name) {
+      .u-hide-on-#{$bp-name}-and-up {display: none !important;}	
+    }
+
+    @include mq($until: $bp-name) {
+      .u-hide-until-#{$bp-name} {display: none !important;}	
+    }
+
+  }
+
+}
+
+

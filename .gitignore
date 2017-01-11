@@ -1,0 +1,58 @@
+# Folders that shouldn't be tracked
+node_modules/
+build/
+
+# Files that shouldn't be tracked
+*.sublime-project
+*.sublime-workspace
+
+
+
+# Ignore hidden folders
+# This takes care of .tmp, .sass-cache, and many others
+.*/
+
+# OSX
+._*
+.AppleDouble
+.DS_Store
+.localized
+.LSOverride
+.Spotlight-V100
+.Trashes
+Icon
+
+# Windows
+Desktop.ini
+ehthumbs.db
+Thumbs.db
+
+# Linux
+*~
+
+# Tags
+# Ignore tags created by etags and ctags
+TAGS
+tags
+
+# Always-ignore files and folders
+*.diff
+*.err
+*.log
+*.orig
+*.rej
+*.swn
+*.swo
+*.swp
+._*
+*~
+
+# Ignore packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip

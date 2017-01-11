@@ -1,0 +1,49 @@
+/* ==========================================================================
+
+   @PAGE
+
+   ========================================================================== */
+
+
+/**
+ * Simple page-level setup.
+ *
+ * 1. Set the default text styling for the entire project, sourced from our 
+ *    default variables. The `font-size` is calculated to exist in ems, the 
+ *    `line-height` exists unitlessly.
+ * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 3. Ensure the page always fills at least the entire height of the viewport.
+ */
+
+html {
+	font-size: ($font-size-base / 16px) * 1em; /* [1] */
+	line-height: $line-height-copy; /* [1] */
+	font-family: $font-family-primary; /* [1] */
+	color: c('text-dark'); /* [1] */
+	overflow-y: scroll; /* [2] */
+	min-height: 100%; /* [3] */
+}
+
+
+/*
+ * Cutom selection highlight. 
+ * 
+ * Important: these selection rule sets have to be separate.
+ * 
+ * 1. Customize the colors to match our design.
+ * 2. Remove text-shadow in selection highlight.
+ */
+
+::-moz-selection {
+    color: c('text-light'); /* [1] */
+    background: c('accent'); /* [1] */
+    text-shadow: none; /* [2] */
+}
+
+::selection {
+    color: c('text-light'); /* [1] */
+    background: c('accent'); /* [1] */
+    text-shadow: none; /* [2] */
+}

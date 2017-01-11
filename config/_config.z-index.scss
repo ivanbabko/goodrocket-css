@@ -1,0 +1,27 @@
+// ============================================================================
+//
+// Z-INDEX LAYERS
+//
+// ============================================================================
+
+// Global map of z-index values for easier management. 
+// Supports nested z-index contexts via nested maps. 
+// Accessed using custom z() function, e.g.: `z-index: z(modal, close)`
+//
+// Further reading:
+// https://www.sitepoint.com/better-solution-managing-z-index-sass/
+
+$z-layers: (
+  'base'          : 1,
+  'overlay'       : 10,
+  'navigation'    : 100,
+  'offcanvas'     : 200,
+  'dropdown'      : 300,
+  'tooltip'       : 400,
+  'modal': (
+    'base'        : 500,
+    'close'       : 5,
+  ),
+);
+
+

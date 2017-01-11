@@ -1,0 +1,499 @@
+/* ==========================================================================
+
+   @RESET
+
+   ========================================================================== */
+
+
+/**
+ * Gently patching up user-agent defaults. Part normalization, part reset.
+ */
+
+
+
+
+
+/* Page
+   ========================================================================== */
+
+/**
+ * 1. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ * 2. Make fonts on OS X look more consistent with other systems and prevent 
+ *    an ugly flickering of font "thickness" when animations start and stop. 
+ * 3. Correct small issue with animations. See:
+ *    https://css-tricks.com/almanac/properties/b/backface-visibility/
+ */
+
+html {
+  -ms-text-size-adjust: 100%; /* [1] */
+  -webkit-text-size-adjust: 100%; /* [1] */
+  -webkit-font-smoothing: antialiased; /* [2] */
+  -moz-osx-font-smoothing: grayscale; /* [2] */
+  -webkit-backface-visibility: hidden; /* [3] */
+}
+
+/**
+ * Remove page margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+
+
+
+
+
+/* HTML5 Elements
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+main {
+  display: block;
+}
+
+
+
+
+
+
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * 1. Fluid images for responsive purposes.
+ * 2. Offset `alt` text from surrounding copy.
+ * 3. Setting `vertical-align` removes the whitespace that appears under `img`
+ *    elements when they are dropped into a page as-is. Safer alternative to
+ *    using `display: block;`.
+ * 4. Remove the border on images inside links in IE 10-.
+ */
+
+img {
+	max-width: 100%; /* [1] */
+	font-style: italic; /* [2] */
+	vertical-align: middle; /* [3] */
+	border-style: none; /* [4] */
+}
+
+
+/**
+ * If a `width` and/or `height` attribute have been explicitly defined, let’s
+ * not make the image fluid.
+ */
+
+img[width],
+img[height] {
+  max-width: none;
+}
+
+
+/**
+ * Remove default margins in all browsers.
+ */
+
+figure {
+  margin:0; 
+}
+
+/**
+ * Remove default border.
+ */
+
+iframe {
+  border: 0;
+}
+
+
+/*
+ * Remove the gap between audio, canvas, iframes, videos 
+ * and the bottom of their containers.
+ */
+
+audio,
+video,
+canvas,
+iframe,
+svg {
+  vertical-align: middle;
+}
+
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+video,
+canvas {
+  display: inline-block;
+}
+
+
+/**
+ * Hide the overflow in IE.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+/* Links
+   ========================================================================== */
+
+/**
+ * Long-gone are the days where all hyperlinks were blue, underlined and only 
+ * wrapped inline content. Below default rules give less surprises when 
+ * applying links to things. Sometimes you just want to apply an underline, 
+ * sometimes only a color. Sometimes nothing, because you just wrapped an 
+ * entire thumbnail or caption.
+ *
+ * 1. Make links inherit the color intended for the region they are in.
+ * 2. Remove underlines from links.
+ * 3. Remove the gray background on active links in IE 10.
+ * 4. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ * 5. Remove the outline on focused links when they are also active or hovered.
+ */
+
+a {
+	color: inherit; /* [1] */
+  text-decoration: none; /* [2] */
+	background-color: transparent; /* [3] */
+  -webkit-text-decoration-skip: objects; /* [4] */
+
+  &:active,
+	&:hover {
+  		outline-width: 0; /* [5] */
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Typography
+   ========================================================================== */
+
+/**
+ * 1. Make all headings the same size as body copy
+ * 2. Reset default margins.
+ */
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: inherit; /* [1] */
+	margin-top: 0; /* [2] */
+	margin-bottom: 0; /* [2] */
+}
+
+
+/**
+ * 1. Remove paragraph margins in all browsers.
+ */
+
+p {
+	margin-top: 0; /* [1] */
+	margin-bottom: 0; /* [1] */
+}
+
+
+/**
+ * 1. Remove default bullets and numbering from lists. No need to strip them 
+ *    off repeatedly every time you make a menu or any other component that is 
+ *    semantically a list. When bullets or numbering are required, create a 
+ *    component using pseudo-elements approach. It provides more customization 
+ *    options. 
+ *    See: http://blog.teamtreehouse.com/customize-ordered-lists-pseudo-element
+ *
+ * 2. Reset default margin and padding in all browsers.
+ */
+
+ol, ul {
+	list-style-type: none; /* [1] */
+	margin-top: 0; /* [2] */
+	margin-bottom: 0; /* [2] */
+  padding-left: 0; /* [2] */
+}
+
+
+/**
+ * 1. Remove blockquote margins and padding in all browsers.
+ */
+
+blockquote {
+	margin: 0; /* [1] */
+	padding: 0; /* [1] */
+}
+
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Tables
+   ========================================================================== */
+
+/**
+ * 1. Remove default table spacing.
+ * 2. Ensure tables fill up as much space as possible.
+ */
+
+table {
+	border-collapse: collapse; /* [1] */
+	border-spacing: 0; /* [1] */
+	width: 100%; /* [2] */
+}
+
+
+
+
+
+
+
+
+
+
+/* Horizontal rule
+   ========================================================================== */
+
+/*
+ * A better looking default horizontal rule.
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* [1] */
+  font-size: 100%; /* [1] */
+  line-height: 1.15; /* [1] */
+  margin: 0; /* [2] */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* [1] */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ * 3. Give all buttons a pointer cursor
+ */
+
+button,
+html [type="button"], /* [1] */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; /* [2] */
+  cursor: pointer; /* [3] */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * 1. Remove default fieldset styles.
+ * 2. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;` 
+ *    on fieldsets.
+ */
+
+fieldset {
+  border: 0; /* [1] */
+  margin: 0; /* [1] */
+  padding: 0; /* [1] */
+  min-width: 0; /* [2] */
+}
+
+
+/**
+ * 1. Remove the default vertical scrollbar in IE.
+ * 2. Allow only vertical resizing of textareas.
+ */
+ 
+textarea {
+  overflow: auto; /* [1] */
+  resize: vertical; /* [2] */
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  display: table; /* [1] */
+  max-width: 100%; /* [1] */
+  color: inherit; /* [2] */
+  padding: 0; /* [3] */
+  white-space: normal; /* [1] */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  display: inline-block; /* [1] */
+  vertical-align: baseline; /* [2] */
+}
+
+/**
+ * Remove the padding in IE 10-.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  padding: 0;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* [1] */
+  outline-offset: -2px; /* [2] */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* [1] */
+  font: inherit; /* [2] */
+}

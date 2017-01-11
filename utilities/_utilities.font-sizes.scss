@@ -1,0 +1,113 @@
+/* ==========================================================================
+
+   @FONT-SIZING UTILITIES
+
+   ========================================================================== */
+
+/**
+ * Redefine all of our font sizes against utility classes so as to allow for 
+ * double stranded text hierarchy, e.g. we semantically need an H2, but we want 
+ * it to be sized like an H1:
+ *
+ *   <h2 class="u-h1"></h2>
+ *
+ * Optionally, we can generate responsive variants of each of these classes:
+ *
+ *   <h2 class="u-h1  u-h2@mobile"></h2>
+ *
+ * This is useful for applying responsive typography right in our markup.
+ *
+ */
+
+
+
+
+
+// A Sass map of font sizes used to generate helper classes
+$font-sizes: $type-scale !default;
+
+
+
+// Generate responsive variants for each of the font sizing classes? E.g.:
+//
+//   .u-h1@desktop
+//   .u-h1@tablet
+
+$responsive-font-sizes: true !default;
+
+
+
+
+
+
+// Private mixin to spit out our font size helper classes based on a list 
+// defined in the $font-sizes list. Accepts optional argument for a responsive 
+// suffix. E.g. to create font-sizing classes for a small breakpoint:
+//
+// @include font-sizes(-sm)
+
+@mixin font-sizes($breakpoint: null) {
+
+  @each $fs-name, $fs-value in $font-sizes {
+
+    // Build a class in the format `.u-h1[@<breakpoint>]`
+    .u-#{$fs-name}#{$breakpoint} {
+      font-size: $fs-value !important;
+      //font-size: ($fs-value / $font-size-base) * 1rem !important;
+    }
+
+  }
+
+}
+
+
+
+
+// The following will genereate a suite of font sizing helper classes based 
+// on the $font-sizes list. We'll use these classes in our markup to define 
+// font size for elements:
+// 
+// <h2 class="u-h1">
+// <h2 class="u-h2">
+// <h2 class="u-h3">
+
+@include font-sizes();
+
+
+
+
+
+
+// Responsive font-sizes
+// ============================================================================
+
+// List of breakpoints used to generate responsive classes.
+$font-sizes-breakpoints: $breakpoints !default;
+
+
+// Separator for the breakpoints suffix in the class name, e.g.:
+// <h2 class="u-h3@mobile"></h2>
+$font-sizes-breakpoint-separator: $breakpoint-separator !default;
+
+
+// The below loop will generate responsive font sizing helper classes for each 
+// of our breakpoints defined in the $font-sizes-breakpoints list, e.g.:
+//
+// <h2 class="u-h1@mobile">
+// <h2 class="u-h1@tablet">
+// <h2 class="u-h1@desktop">
+
+
+@if ($responsive-font-sizes == true) {
+
+  @each $bp-name, $bp-value in $font-sizes-breakpoints {
+
+    @include mq($from: $bp-name) {
+      
+      @include font-sizes(#{$font-sizes-breakpoint-separator}#{$bp-name});
+
+    }
+
+  }
+
+}

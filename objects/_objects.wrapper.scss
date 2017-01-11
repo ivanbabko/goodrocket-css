@@ -1,0 +1,46 @@
+/* ==========================================================================
+
+   @WRAPPER
+
+   ========================================================================== */
+
+/**
+ * Page-level constraining element.
+ */
+
+$wrapper-width-xs     : 600px  !default;
+$wrapper-width-sm     : 800px  !default;
+$wrapper-width        : 1200px !default;
+$wrapper-width-lg     : 1400px !default;
+$wrapper-width-xl     : 1600px !default;
+
+
+.o-wrapper {
+  @include clearfix;
+  //padding-right: $spacing;
+  //padding-left:  $spacing;
+  margin-right: auto;
+  margin-left:  auto;
+  max-width: $wrapper-width;
+}
+
+
+
+/* Size variants.
+   ========================================================================== */
+
+.o-wrapper--xs {
+  max-width: $wrapper-width-xs;
+}
+
+.o-wrapper--sm {
+  max-width: $wrapper-width-sm;
+}
+
+.o-wrapper--lg {
+  max-width: $wrapper-width-lg;
+}
+
+.o-wrapper--xl {
+  max-width: $wrapper-width-xl;
+}

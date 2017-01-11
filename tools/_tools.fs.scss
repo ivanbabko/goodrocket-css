@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+// ============================================================================
+//
+// FS FUNCTION
+//
+// ============================================================================
+
+// Provides access to font sizes in $type-scale map by name.
+//
+// @require {map} $type-scale
+//
+// @example scss
+//   .element {
+//     font-size: fs('h1');
+//   }
+
+@function fs($name, $map:$type-scale) {
+    @if map-has-key($map, $name) {
+        @return map-get($map, $name);
+    } @else {
+        @warn "The value #{$name} is not in the #{$map} map";
+        @return null;
+    }
+};

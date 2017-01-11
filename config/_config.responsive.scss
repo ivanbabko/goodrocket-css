@@ -1,0 +1,41 @@
+// ============================================================================
+//
+// RESPONSIVE SETTINGS
+//
+// ============================================================================
+
+// Global breakpoints map. 
+// Accessed using Sass MQ mixin, e.g. `@include mq($from: sm, $until: md) {..}`
+// Pixel values are converted to ems automatically based on the root font size.
+
+$breakpoints: (
+  'sm': 640px,
+  'md': 1024px,
+  'lg': 1280px,
+);
+
+
+// Responsive utilities
+// ============================================================================
+
+// Based on breakpoints defined above, we can auto-generate responsive variants 
+// for our utility classes. E.g.: `<div class="u-float-left@large">` kicks in 
+// from `large` breakpoint. Note: Having these responsive classes comes at a 
+// cost of additional CSS file size. 
+
+$responsive-widths          : true;   // Width utilities used by our grid
+$responsive-spacing         : true;   // Margin and padding helpers
+$responsive-font-sizes      : true;   // Font sizing utility classes
+$responsive-bfc             : true;   // Block formatting context utilities
+$responsive-text-align      : true;   // Horizontal text algignment helpers
+$responsive-hiding          : true;   // Helpers to hide content
+
+
+// Separator for the breakpoints suffix in class name of responsive utilities. 
+// By default, the responsive suffixes are generated with a `@` symbol so we 
+// get classes like: <h1 class="u-h3@small"></h1>
+
+$breakpoint-separator: \@;
+
+
+

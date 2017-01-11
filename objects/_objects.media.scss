@@ -1,0 +1,154 @@
+/* ==========================================================================
+
+   @MEDIA OBJECT
+
+   ========================================================================== */
+
+/**
+ * Place any image- and text-like content side-by-side, as per:
+ * http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ */
+
+.o-media {
+  @include clearfix;
+  display: block;
+}
+
+
+  .o-media__img {
+    float: left;
+    margin-right: $spacing;
+
+    > img {
+      display: block;
+    }
+
+  }
+
+
+  .o-media__body {
+    overflow: hidden;
+    display: block;
+
+    &,
+    > :last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+
+
+
+
+/* Size variants
+   ========================================================================== */
+
+/**
+ * Modify the amount of space between our image and our text. We also have
+ * reversible options for all available sizes.
+ */
+
+.o-media--xs {
+
+  > .o-media__img {
+    margin-right: $spacing-xs;
+  }
+
+  &.o-media--reverse {
+
+    > .o-media__img {
+      margin-right: 0;
+      margin-left:  $spacing-xs;
+    }
+
+  }
+
+}
+
+
+.o-media--sm {
+
+  > .o-media__img {
+    margin-right: $spacing-sm;
+  }
+
+  &.o-media--reverse {
+
+    > .o-media__img {
+      margin-right: 0;
+      margin-left:  $spacing-sm;
+    }
+
+  }
+
+}
+
+
+.o-media--lg {
+
+  > .o-media__img {
+    margin-right: $spacing-lg;
+  }
+
+  &.o-media--reverse {
+
+    > .o-media__img {
+      margin-right: 0;
+      margin-left:  $spacing-lg;
+    }
+
+  }
+
+}
+
+
+.o-media--xl {
+
+  > .o-media__img {
+    margin-right: $spacing-xl;
+  }
+
+  &.o-media--reverse {
+
+    > .o-media__img {
+      margin-right: 0;
+      margin-left:  $spacing-xl;
+    }
+
+  }
+
+}
+
+
+
+
+
+/* Reversed media objects
+   ========================================================================== */
+
+.o-media--reverse {
+
+  > .o-media__img {
+    float: right;
+    margin-right: 0;
+    margin-left: $spacing;
+  }
+
+}
+
+
+
+
+
+/* Gutterless media objects
+   ========================================================================== */
+
+.o-media--flush {
+
+  > .o-media__img {
+    margin-right: 0;
+    margin-left:  0;
+  }
+
+}
