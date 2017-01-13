@@ -4,21 +4,20 @@
 
    ========================================================================== */
 
-
 /**
  * Simple helpers to align text in our markup.
  */
 
-.u-text-left    {text-align: left   !important;}
-.u-text-center  {text-align: center !important;}
-.u-text-right   {text-align: right  !important;}
+.u-text-left    {text-align: left;}
+.u-text-center  {text-align: center;}
+.u-text-right   {text-align: right;}
 
 
 
 // Responsive text alignment
 // ============================================================================
 
-// Generate responsive text-align utilities? 
+// Generate responsive text-align utilities?
 $responsive-text-align: true !default;
 
 // Sass map of breakpoints used to generate responsive helpers.
@@ -29,7 +28,7 @@ $text-align-breakpoints: $breakpoints !default;
 $text-align-breakpoint-separator: $breakpoint-separator !default;
 
 // The below loop will generate us a suite of classes like:
-// 
+//
 //   .u-text-left@desktop {}
 //   .u-text-center@mobile {}
 
@@ -38,10 +37,10 @@ $text-align-breakpoint-separator: $breakpoint-separator !default;
   @each $bp-name, $bp-value in $text-align-breakpoints {
 
     @include mq($from: $bp-name) {
-      
-      .u-text-left#{$text-align-breakpoint-separator}#{$bp-name}   {text-align: left   !important;}
-      .u-text-center#{$text-align-breakpoint-separator}#{$bp-name} {text-align: center !important;}
-      .u-text-right#{$text-align-breakpoint-separator}#{$bp-name}  {text-align: right  !important;}
+
+      .u-text-left#{$text-align-breakpoint-separator}#{$bp-name}   {text-align: left;}
+      .u-text-center#{$text-align-breakpoint-separator}#{$bp-name} {text-align: center;}
+      .u-text-right#{$text-align-breakpoint-separator}#{$bp-name}  {text-align: right;}
 
     }
 

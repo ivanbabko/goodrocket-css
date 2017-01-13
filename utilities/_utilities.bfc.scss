@@ -4,40 +4,39 @@
 
    ========================================================================== */
 
-
 /**
  * Simple helper classes to manipulate block formatting context.
  */
 
-.u-float-left           {float: left  !important; }
-.u-float-right          {float: right !important; }
-.u-float-none           {float: none  !important; }
+.u-float-left           { float: left; }
+.u-float-right          { float: right; }
+.u-float-none           { float: none; }
 
-.u-display-inline       { display: inline!important; }
-.u-display-block        { display: block !important; }
-.u-display-inline-block { display: inline-block !important; }
-.u-display-table        { display: table !important; }
-.u-display-table-cell   { display: table-cell !important; }
+.u-display-inline       { display: inline; }
+.u-display-block        { display: block; }
+.u-display-inline-block { display: inline-block; }
+.u-display-table        { display: table; }
+.u-display-table-cell   { display: table-cell; }
 
-.u-overflow-hidden      { overflow: hidden !important; }
-.u-overflow-scroll      { overflow: scroll !important; }
-.u-overflow-auto        { overflow: auto !important; }
+.u-overflow-hidden      { overflow: hidden; }
+.u-overflow-scroll      { overflow: scroll; }
+.u-overflow-auto        { overflow: auto; }
 
-.u-position-relative    { position: relative !important; }
-.u-position-absolute    { position: absolute !important; }
-.u-position-fixed       { position: fixed !important; }
+.u-position-relative    { position: relative; }
+.u-position-absolute    { position: absolute; }
+.u-position-fixed       { position: fixed; }
 
-.u-top-0                { top: 0 !important; }
-.u-right-0              { right: 0 !important; }
-.u-bottom-0             { bottom: 0 !important; }
-.u-left-0               { left: 0 !important; }
+.u-top-0                { top: 0; }
+.u-right-0              { right: 0; }
+.u-bottom-0             { bottom: 0; }
+.u-left-0               { left: 0; }
 
 
 
 // Responsive block formatting context
 // ============================================================================
 
-// Generate responsive helpers? 
+// Generate responsive helpers?
 $responsive-bfc: true !default;
 
 // Sass map of breakpoints used to generate responsive helpers.
@@ -48,7 +47,7 @@ $bfc-breakpoints: $breakpoints !default;
 $bfc-breakpoint-separator: $breakpoint-separator !default;
 
 // The below loop will generate us a suite of classes like:
-// 
+//
 //   .u-float-left@desktop {}
 //   .u-float-none@mobile {}
 
@@ -57,29 +56,29 @@ $bfc-breakpoint-separator: $breakpoint-separator !default;
   @each $bp-name, $bp-value in $bfc-breakpoints {
 
     @include mq($from: $bp-name) {
-      
-      .u-float-left#{$bfc-breakpoint-separator}#{$bp-name}           {float: left  !important;}
-      .u-float-right#{$bfc-breakpoint-separator}#{$bp-name}          {float: right !important;}
-      .u-float-none#{$bfc-breakpoint-separator}#{$bp-name}           {float: none  !important;}
 
-      .u-display-inline#{$bfc-breakpoint-separator}#{$bp-name}       { display: inline!important; }
-      .u-display-block#{$bfc-breakpoint-separator}#{$bp-name}        { display: block !important; }
-      .u-display-inline-block#{$bfc-breakpoint-separator}#{$bp-name} { display: inline-block !important; }
-      .u-display-table#{$bfc-breakpoint-separator}#{$bp-name}        { display: table !important; }
-      .u-display-table-cell#{$bfc-breakpoint-separator}#{$bp-name}   { display: table-cell !important; }
+      .u-float-left#{$bfc-breakpoint-separator}#{$bp-name}           { float: left; }
+      .u-float-right#{$bfc-breakpoint-separator}#{$bp-name}          { float: right; }
+      .u-float-none#{$bfc-breakpoint-separator}#{$bp-name}           { float: none; }
 
-      .u-overflow-hidden#{$bfc-breakpoint-separator}#{$bp-name}      { overflow: hidden !important;}
-      .u-overflow-scroll#{$bfc-breakpoint-separator}#{$bp-name}      { overflow: scroll !important; }
-      .u-overflow-auto#{$bfc-breakpoint-separator}#{$bp-name}        { overflow: auto !important;}
+      .u-display-inline#{$bfc-breakpoint-separator}#{$bp-name}       { display: inline; }
+      .u-display-block#{$bfc-breakpoint-separator}#{$bp-name}        { display: block; }
+      .u-display-inline-block#{$bfc-breakpoint-separator}#{$bp-name} { display: inline-block; }
+      .u-display-table#{$bfc-breakpoint-separator}#{$bp-name}        { display: table; }
+      .u-display-table-cell#{$bfc-breakpoint-separator}#{$bp-name}   { display: table-cell; }
 
-      .u-position-relative#{$bfc-breakpoint-separator}#{$bp-name}    { position: relative !important; }
-      .u-position-absolute#{$bfc-breakpoint-separator}#{$bp-name}    { position: absolute !important; }
-      .u-position-fixed#{$bfc-breakpoint-separator}#{$bp-name}       { position: fixed !important; }
+      .u-overflow-hidden#{$bfc-breakpoint-separator}#{$bp-name}      { overflow: hidden; }
+      .u-overflow-scroll#{$bfc-breakpoint-separator}#{$bp-name}      { overflow: scroll; }
+      .u-overflow-auto#{$bfc-breakpoint-separator}#{$bp-name}        { overflow: auto; }
 
-      .u-top-0#{$bfc-breakpoint-separator}#{$bp-name}                { top: 0 !important; }
-      .u-right-0#{$bfc-breakpoint-separator}#{$bp-name}              { right: 0 !important; }
-      .u-bottom-0#{$bfc-breakpoint-separator}#{$bp-name}             { bottom: 0 !important; }
-      .u-left-0#{$bfc-breakpoint-separator}#{$bp-name}               { left: 0 !important; }
+      .u-position-relative#{$bfc-breakpoint-separator}#{$bp-name}    { position: relative; }
+      .u-position-absolute#{$bfc-breakpoint-separator}#{$bp-name}    { position: absolute; }
+      .u-position-fixed#{$bfc-breakpoint-separator}#{$bp-name}       { position: fixed; }
+
+      .u-top-0#{$bfc-breakpoint-separator}#{$bp-name}                { top: 0; }
+      .u-right-0#{$bfc-breakpoint-separator}#{$bp-name}              { right: 0; }
+      .u-bottom-0#{$bfc-breakpoint-separator}#{$bp-name}             { bottom: 0; }
+      .u-left-0#{$bfc-breakpoint-separator}#{$bp-name}               { left: 0; }
 
     }
 

@@ -11,16 +11,16 @@
 // 01. CONFIG
 // ============================================================================
 
-// This layer holds project configuration and global variables. Component 
-// specific variables are defined in component partials. This ensures this 
-// layer stays slim, and means that most variables can be found alongside 
+// This layer holds project configuration and global variables. Component
+// specific variables are defined in component partials. This ensures this
+// layer stays slim, and means that most variables can be found alongside
 // the code that uses them.
 //
 // Note: this layer does not output any CSS.
 //
 // 1. Typography settings.
 // 2. Color palette definition.
-// 3. Global spacing units. 
+// 3. Global spacing units.
 // 4. Responsive settings.
 // 5. Z-index layers management.
 // 6. Misc global variables (e.g., border radius, default transition, etc.)
@@ -39,10 +39,10 @@
 // 02. TOOLS
 // ============================================================================
 
-// The Tools layer houses project-specific mixins and functions that need to 
-// be available globally. Any mixin or function that does not need accessing 
-// globally belongs in the partial to which it relates. This Tools layer 
-// comes after the Config layer because a function or a mixin may require 
+// The Tools layer houses project-specific mixins and functions that need to
+// be available globally. Any mixin or function that does not need accessing
+// globally belongs in the partial to which it relates. This Tools layer
+// comes after the Config layer because a function or a mixin may require
 // one of the global variables as a default parameter.
 //
 // Note: this layer doesn not output any CSS.
@@ -54,8 +54,8 @@
 // 6. Mixin for accessibly hiding elements.
 // 8. Mixin for writing media queries.
 
-@import "tools/tools.c"; // [1]
-@import "tools/tools.fs"; // [2]
+@import "tools/tools.fs"; // [1]
+@import "tools/tools.c"; // [2]
 @import "tools/tools.z"; // [3]
 @import "tools/tools.clearfix"; // [4]
 @import "tools/tools.hide-visually"; // [5]
@@ -67,12 +67,12 @@
 
 
 // 03. GENERIC
-// ============================================================================ 
+// ============================================================================
 
-// The Generic layer is the first one that actually produces any CSS. It houses 
-// very high-level, far reaching styles so it affects a lot of the DOM. This 
-// layer is seldom modified, and is usually the same across many projects. 
-// It contains things like Normalize.css, box-sizing rules, CSS resets, etc. 
+// The Generic layer is the first one that actually produces any CSS. It houses
+// very high-level, far reaching styles so it affects a lot of the DOM. This
+// layer is seldom modified, and is usually the same across many projects.
+// It contains things like Normalize.css, box-sizing rules, CSS resets, etc.
 //
 // 1. Better default `box-sizing`.
 // 2. Combination of reset and normalize.
@@ -86,71 +86,70 @@
 
 
 // 04. OBJECTS
-// ============================================================================ 
+// ============================================================================
 
-// Objects are abstracted, design-free, reusable patterns that provide 
-// structural styles for UI components. This is the first layer in which 
-// class-based selectors are used. This layer affects less of the DOM than 
-// the last layer and has a higher specificity because we bind on to classes. 
+// Objects are abstracted, design-free, reusable patterns that provide
+// structural styles for UI components. This is the first layer in which
+// class-based selectors are used. This layer affects less of the DOM than
+// the last layer and has a higher specificity because we bind on to classes.
 //
 // Note: Object classes are prefixed with a `o-` to help us understand what
 // these classes do when we look at the code (e.g. <div class="o-media">).
 //
-// 1. o-wrapper: Page constraint object.
+// 1. o-container: Page constraint object.
 // 2. o-layout: Generic layout module.
 // 3. o-media: Image- and text-like content side by side.
 // 4. o-flag: Table-layout-based advancement on the Media object.
 // 5. o-list-reset: Lists with no bullets or indents.
 // 6. o-list-inline: A list whose items all site in a line.
-// 7. o-box: Simple boxing abstraction.
-// 8. o-block: Image-on-top-of-text object.
-// 9. o-ratio: A container for maintaining aspect ratio of content.
-// 10. o-table: Classes for manipulating `table`s.
-// 11. o-pack: Pack items into available horizontal space.
+// 7. o-block: Image-on-top-of-text object.
+// 8. o-ratio: A wrapper for maintaining aspect ratio of content.
+// 9. o-table: Classes for manipulating `table`s.
+// 10. o-pack: Pack items into available horizontal space.
 
-@import "objects/objects.wrapper"; // [1]
+@import "objects/objects.container"; // [1]
 @import "objects/objects.layout"; // [2]
 @import "objects/objects.media"; // [3]
 @import "objects/objects.flag"; // [4]
 @import "objects/objects.list-reset"; // [5]
 @import "objects/objects.list-inline"; // [6]
-@import "objects/objects.box"; // [7]
-@import "objects/objects.block"; // [8]
-@import "objects/objects.ratio"; // [9]
-@import "objects/objects.table"; // [10]
-@import "objects/objects.pack"; // [11]
+@import "objects/objects.block"; // [7]
+@import "objects/objects.ratio"; // [8]
+@import "objects/objects.table"; // [9]
+@import "objects/objects.pack"; // [10]
 
 
 
 
 // 05. COMPONENTS
-// ============================================================================ 
+// ============================================================================
 
-// The Components layer is where we begin to style recognisable pieces of UI. 
-// This is where the majority of the work happens after initial project set-up. 
-// We're still binding onto classes here, so the specificity doesn't increase. 
-// However, this layer is more explicit than the last one in that we are now 
-// styling discrete, complete chunks of UI (e.g. .c-carousel {}). We shouldn't 
-// find any selectors with a lower specificity than one class in this layer. 
-// At the same time, we should avoid increasing specificity by nesting, 
+// The Components layer is where we begin to style recognisable pieces of UI.
+// This is where the majority of the work happens after initial project set-up.
+// We're still binding onto classes here, so the specificity doesn't increase.
+// However, this layer is more explicit than the last one in that we are now
+// styling discrete, complete chunks of UI (e.g. .c-carousel {}). We shouldn't
+// find any selectors with a lower specificity than one class in this layer.
+// At the same time, we should avoid increasing specificity by nesting,
 // chaining, or qualifying the selectors.
 //
 // Note: Component classes are prefixed with a `c-` to help us understand
 // what these classes do when we look at the code (e.g., .c-btn).
 
-@import "components/**/*.scss"; // This pattern requires gulp-sass-glob
+@import "components/**/*.scss";
 
 
 
 
-// 06. UTILITIES	
-// ============================================================================ 
 
-// This is where we put our utility classes (e.g. .u-hidden {}). This layer 
-// beats all other layers, and has the power to override anything that has gone 
-// before it. It contains high-specificity, very explicit selectors. 
+// 06. UTILITIES
+// ============================================================================
+
+// This is where we put our utility classes (e.g. .u-hidden {}). This layer
+// beats all other layers, and has the power to override anything that has gone
+// before it. It contains high-specificity, very explicit selectors.
 //
-// Note: Utility classes are prefixed with a `u-` to help us understand 
+// Note: Utility classes are prefixed with a `u-` to help us understand
 // what these classes do when we look at the code (e.g. .u-clearfix)
 //
 // 1. Bind the clearfix mixin onto a utility class.

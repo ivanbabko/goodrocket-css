@@ -5,8 +5,8 @@
    ========================================================================== */
 
 /**
- * Redefine all of our font sizes against utility classes so as to allow for 
- * double stranded text hierarchy, e.g. we semantically need an H2, but we want 
+ * Redefine all of our font sizes against utility classes so as to allow for
+ * double stranded text hierarchy, e.g. we semantically need an H2, but we want
  * it to be sized like an H1:
  *
  *   <h2 class="u-h1"></h2>
@@ -23,8 +23,20 @@
 
 
 
-// A Sass map of font sizes used to generate helper classes
+// A Sass map of font sizes used to generate helper classes. E.g.:
+//
+// $font-sizes: (
+//  'h1': 48px,
+//  'h2': 32px,
+//  'h3': 24px,
+// );
+
 $font-sizes: $type-scale !default;
+
+
+
+
+
 
 
 
@@ -40,20 +52,29 @@ $responsive-font-sizes: true !default;
 
 
 
-// Private mixin to spit out our font size helper classes based on a list 
-// defined in the $font-sizes list. Accepts optional argument for a responsive 
-// suffix. E.g. to create font-sizing classes for a small breakpoint:
+// Private mixin to spit out our font size helper classes based on a list
+// defined in the $font-sizes map. Optionally we can pass a suffix for class
+// names, and a flag indicating whether or not we want `!important` there.
+// E.g. to create font-sizing utilities with `-sm` suffix and no `!important`:
 //
-// @include font-sizes(-sm)
+// @include font-sizes(-sm, false)
 
-@mixin font-sizes($breakpoint: null) {
+@mixin font-sizes($suffix: null, $important: false) {
+
+  @if ($important == true) {
+    $important: !important;
+  } @elseif ($important == false) {
+    $important: null;
+  } @else {
+    @error "`#{$important}` needs to be `true` or `false`."
+  }
 
   @each $fs-name, $fs-value in $font-sizes {
 
     // Build a class in the format `.u-h1[@<breakpoint>]`
-    .u-#{$fs-name}#{$breakpoint} {
-      font-size: $fs-value !important;
-      //font-size: ($fs-value / $font-size-base) * 1rem !important;
+    .u-#{$fs-name}#{$suffix} {
+      font-size: $fs-value $important;
+      //font-size: ($fs-value / $font-size-base) * 1rem $important;
     }
 
   }
@@ -63,10 +84,10 @@ $responsive-font-sizes: true !default;
 
 
 
-// The following will genereate a suite of font sizing helper classes based 
-// on the $font-sizes list. We'll use these classes in our markup to define 
+// The following will genereate a suite of font sizing helper classes based
+// on the $font-sizes list. We'll use these classes in our markup to define
 // font size for elements:
-// 
+//
 // <h2 class="u-h1">
 // <h2 class="u-h2">
 // <h2 class="u-h3">
@@ -81,7 +102,14 @@ $responsive-font-sizes: true !default;
 // Responsive font-sizes
 // ============================================================================
 
-// List of breakpoints used to generate responsive classes.
+// Sass map of breakpoints used to generate responsive classes. E.g.:
+//
+// $font-sizes-breakpoints: (
+//  'sm': 640px,
+//  'md': 1024px,
+//  'lg': 1280px,
+// );
+
 $font-sizes-breakpoints: $breakpoints !default;
 
 
@@ -90,7 +118,7 @@ $font-sizes-breakpoints: $breakpoints !default;
 $font-sizes-breakpoint-separator: $breakpoint-separator !default;
 
 
-// The below loop will generate responsive font sizing helper classes for each 
+// The below loop will generate responsive font sizing helper classes for each
 // of our breakpoints defined in the $font-sizes-breakpoints list, e.g.:
 //
 // <h2 class="u-h1@mobile">
@@ -103,7 +131,7 @@ $font-sizes-breakpoint-separator: $breakpoint-separator !default;
   @each $bp-name, $bp-value in $font-sizes-breakpoints {
 
     @include mq($from: $bp-name) {
-      
+
       @include font-sizes(#{$font-sizes-breakpoint-separator}#{$bp-name});
 
     }

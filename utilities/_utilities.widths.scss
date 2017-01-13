@@ -50,6 +50,7 @@ $widths-fractions: 1 2 3 4 5 !default;
 
 
 
+
 // Generate responsive variants for each of the width classes? E.g.:
 //
 //   .u-1/2@mobile
@@ -88,13 +89,23 @@ $widths-delimiter: \/ !default;
 
 
 
-// Private mixin to spit out our width classes. Pass in the columns we want the 
-// widths to have, and an optional suffix for responsive widths. E.g. to create 
-// thirds and quarters for a small breakpoint:
-//
-// @include widths(3 4, -sm);
 
-@mixin widths($columns, $breakpoint: null) {
+// Private mixin to spit out our width classes. Pass in the columns we want the
+// widths to have. Optionally we can pass an a suffix for class names, and a flag
+// indicating whether or not we want `!important` there. E.g. to create thirds and
+// quarters with `-sm` suffix and no `!important`:
+//
+// @include widths(3 4, -sm, false);
+
+@mixin widths($columns, $suffix: null, $important: false) {
+
+  @if ($important == true) {
+    $important: !important;
+  } @elseif ($important == false) {
+    $important: null;
+  } @else {
+    @error "`#{$important}` needs to be `true` or `false`."
+  }
 
   // Loop through the number of columns for each denominator of our fractions.
   @each $denominator in $columns {
@@ -104,8 +115,8 @@ $widths-delimiter: \/ !default;
     @for $numerator from 1 through $denominator {
 
       // Build a class in the format `.u-3/4[@<breakpoint>]`.
-      .u-#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
-        width: ($numerator / $denominator) * 100% !important;
+      .u-#{$numerator}#{$widths-delimiter}#{$denominator}#{$suffix} {
+        width: ($numerator / $denominator) * 100% $important;
       }
 
       @if ($widths-offsets == true) {
@@ -115,16 +126,16 @@ $widths-delimiter: \/ !default;
         */
 
         // Build a class in the format `.u-push-1/2[@<breakpoint>]`.
-        .u-push-#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
+        .u-push-#{$numerator}#{$widths-delimiter}#{$denominator}#{$suffix} {
           position: relative !important;
           right: auto !important; /* [1] */
-          left: ($numerator / $denominator) * 100% !important;
+          left: ($numerator / $denominator) * 100% $important;
         }
 
         // Build a class in the format `.u-pull-5/6[@<breakpoint>]`.
-        .u-pull-#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
+        .u-pull-#{$numerator}#{$widths-delimiter}#{$denominator}#{$suffix} {
           position: relative !important;
-          right: ($numerator / $denominator) * 100% !important;
+          right: ($numerator / $denominator) * 100% $important;
           left: auto !important; /* [1] */
         }
 
@@ -139,12 +150,12 @@ $widths-delimiter: \/ !default;
 
 
 
-// The following will generate a series of width helper classes based on the 
+// The following will generate a series of width helper classes based on the
 // fractions defined in the `$fractions` list. Use these classes to size things
 // like grid systems. Classes take a fraction-like format (e.g. `.u-2/3`):
-// 
+//
 // <div class="u-7/12">
- 
+
 @include widths($widths-fractions);
 
 
@@ -157,14 +168,21 @@ $widths-delimiter: \/ !default;
 // Responsive widths
 // ============================================================================
 
-// Sass map of breakpoints used to generate responsive classes.
+// Sass map of breakpoints used to generate responsive classes. E.g.:
+//
+// $widths-breakpoints: (
+//  'sm': 640px,
+//  'md': 1024px,
+//  'lg': 1280px,
+// );
+
 $widths-breakpoints: $breakpoints !default;
 
 // Separator for the breakpoints suffix in the class name, e.g.:
 // <div class="u-3/12@mobile">
 $widths-breakpoint-separator: $breakpoint-separator !default;
 
-// The below loop will generate grid system(s) for each of our breakpoints 
+// The below loop will generate grid system(s) for each of our breakpoints
 // defined in the $widths-breakpoints list, e.g.:
 //
 // <div class="u-3/12@mobile">

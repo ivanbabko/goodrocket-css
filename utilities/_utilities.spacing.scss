@@ -55,12 +55,14 @@ $spacing-sizes: (
 
 
 
+
+
 // Generate responsive variant for each of the spacing classes? E.g.:
 //
 //   .u-margin-top@tablet
 //   .u-margin-horizontal--none@mobile
 //   .u-padding@desktop
-// 
+//
 // Warning: this may generate a lot of extra code.
 
 $responsive-spacing: true !default;
@@ -69,13 +71,22 @@ $responsive-spacing: true !default;
 
 
 
-// Private mixin to spit out our spacing classes. Pass in an optional suffix for 
-// responsive spacing classes. E.g. to create spacing classes for a small 
-// breakpoint:
+// Private mixin to spit out our spacing classes. Optionally we can pass a
+// suffix for class names, and a flag indicating whether or not we want
+// `!important` there. E.g. to create spacing utilities with `-sm` suffix
+// and no `!important`:
 //
-// @include spacing(-sm);
+// @include spacing(-sm, false);
 
-@mixin spacing($breakpoint: null) {
+@mixin spacing($suffix: null, $important: false) {
+
+  @if ($important == true) {
+    $important: !important;
+  } @elseif ($important == false) {
+    $important: null;
+  } @else {
+    @error "`#{$important}` needs to be `true` or `false`."
+  }
 
   @each $property-namespace, $property in $spacing-properties {
 
@@ -84,10 +95,10 @@ $responsive-spacing: true !default;
       @each $size-namespace, $size in $spacing-sizes {
 
         // Build a class in the format `.u-margin-bottom--large[@<breakpoint>]`
-        .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace}#{$breakpoint} {
+        .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace}#{$suffix} {
 
           @each $direction in $direction-rules {
-            #{$property}#{$direction}: $size !important;
+            #{$property}#{$direction}: $size $important;
           }
 
         }
@@ -105,9 +116,9 @@ $responsive-spacing: true !default;
 
 
 // The following will genereate a suite of spacing helper classes based on
-// $spacing-directions, $spacing-properties, and $spacing-sizes lists. 
+// $spacing-directions, $spacing-properties, and $spacing-sizes lists.
 // We'll use these classes in our markup to define spacing for DOM elements:
-// 
+//
 // <div class="u-margin-bottom">
 // <div class="u-padding--none">
 
@@ -120,7 +131,14 @@ $responsive-spacing: true !default;
 // Responsive spacing
 // ============================================================================
 
-// Sass map of breakpoints used to generate responsive classes.
+// Sass map of breakpoints used to generate responsive classes. E.g.:
+//
+// $spacing-breakpoints: (
+//  'sm': 640px,
+//  'md': 1024px,
+//  'lg': 1280px,
+// );
+
 $spacing-breakpoints: $breakpoints !default;
 
 
@@ -129,7 +147,7 @@ $spacing-breakpoints: $breakpoints !default;
 $spacing-breakpoint-separator: $breakpoint-separator !default;
 
 
-// The below loop will generate responsive spacing helpers for each of our 
+// The below loop will generate responsive spacing helpers for each of our
 // breakpoints defined in the $spacing-breakpoints list, e.g.:
 //
 // <div class="u-margin-bottom--none@mobile">
@@ -143,7 +161,7 @@ $spacing-breakpoint-separator: $breakpoint-separator !default;
     @include mq($from: $bp-name) {
 
       @include spacing(#{$spacing-breakpoint-separator}#{$bp-name});
-      
+
     }
 
   }

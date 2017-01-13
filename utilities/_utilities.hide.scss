@@ -19,7 +19,7 @@
  */
 
 .u-hide {
-	display: none !important;
+	display: none;
 }
 
 
@@ -27,14 +27,14 @@
 // Responsive hiding
 // ============================================================================
 
-// Generate responsive utilities to hide content? 
+// Generate responsive utilities to hide content?
 $responsive-hiding: true !default;
 
 // Sass map of breakpoints used to generate responsive helpers.
 $hide-breakpoints: $breakpoints !default;
 
 // The below loop will generate us a suite of classes like:
-// 
+//
 //   .u-hide-on-tablet-and-up {}
 //   .u-hide-until-tablet {}
 
@@ -43,11 +43,11 @@ $hide-breakpoints: $breakpoints !default;
   @each $bp-name, $bp-value in $hide-breakpoints {
 
     @include mq($from: $bp-name) {
-      .u-hide-on-#{$bp-name}-and-up {display: none !important;}	
+      .u-hide-on-#{$bp-name}-and-up {display: none;}
     }
 
     @include mq($until: $bp-name) {
-      .u-hide-until-#{$bp-name} {display: none !important;}	
+      .u-hide-until-#{$bp-name} {display: none;}
     }
 
   }

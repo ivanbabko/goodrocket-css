@@ -1,0 +1,22 @@
+/* ==========================================================================
+
+   @ICONS
+
+   ========================================================================== */
+
+/**
+ * Styles for icons from inlined SVG sprite. Used like so in markup:
+ *
+ * <svg class="c-icon">
+ *  <use xlink:href="#user"></use>
+ * </svg>
+ *
+ */
+
+.c-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}

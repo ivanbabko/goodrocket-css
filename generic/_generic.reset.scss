@@ -46,6 +46,8 @@ body {
 
 
 
+
+
 /* HTML5 Elements
    ========================================================================== */
 
@@ -53,9 +55,27 @@ body {
  * Add the correct display in IE 9-.
  */
 
-main {
-  display: block;
+article,
+aside,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display:block;
 }
+
+mark {
+  background:#ff0;
+  color:#000;
+}
+
+template { display:none; }
+
 
 
 
@@ -277,6 +297,7 @@ sup {
 
 
 
+
 /* Tables
    ========================================================================== */
 
@@ -315,6 +336,7 @@ hr {
   margin: 0;
   padding: 0;
 }
+
 
 
 
