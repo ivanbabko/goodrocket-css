@@ -6,7 +6,7 @@ development.
 
 It uses the best of Sass and avoids its dangerous features. So no things like `@extend` 
 or deep nesting. It is based on BEM naming conventions and OOCSS approach. It largerly 
-borrows from ITCSS architecture and its real-life incarnation - the almighty InuitCSS framework, which 
+borrows from ITCSS architecture and its real-life incarnation &mdash; the almighty InuitCSS framework, which 
 I extended and adapted to my development style.
 
 
