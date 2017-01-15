@@ -6,7 +6,7 @@ development.
 
 It uses the best of Sass and avoids its dangerous features. So no things like `@extend` 
 or deep nesting. It is based on BEM naming conventions and OOCSS approach. It largerly 
-borrows from ITCSS architecture and its real-life incarnation Inuit CSS framework, which 
+borrows from ITCSS architecture and its real-life incarnation --- almighty InuitCSS framework, which 
 I extended and adapted to my development style.
 
 
@@ -99,7 +99,7 @@ what these classes do when we look at the markup (e.g. `.u-clearfix {}`)
 
 **So why Goodrocket?** 
 Because a good rocket will take you really far really fast. And it won't explode in the process. 
-I thought this was a good metaphor for a starting CSS kit. Hint: there is a sister project
+I thought this was a good metaphor for a CSS starter kit. Hint: there is a sister project
 [Goodrocket Jekyll](https://github.com/ivanbabko/goodrocket-jekyll). It's another boilerplate, but this time
 for CMS and build system. Check it out.
 
