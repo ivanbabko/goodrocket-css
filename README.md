@@ -1,7 +1,7 @@
 # Goodrocket CSS
 
 This is a design free CSS starting kit for writing modular, scalable, and maintainable CSS. 
-The aim is to provide a solid structure and sensible defaults to jump start the 
+The aim is to provide a solid structure and sensible defaults to jump start the UI
 development. 
 
 It uses the best of Sass and avoids its dangerous features. So no things like `@extend` 
