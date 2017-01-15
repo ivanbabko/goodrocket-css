@@ -5,16 +5,16 @@ The aim is to provide a solid structure and sensible defaults to jump start the
 development. 
 
 It uses the best of Sass and avoids its dangerous features. So no things like `@extend` 
-or deep nesting. It is based on BEM naming conventions and OOCSS approach. It largerly 
-borrows from ITCSS architecture and its real-life incarnation &mdash; the almighty Inuitcss framework, which 
-I extended and adapted to my development style.
+or deep nesting. It is based on BEM naming conventions and OOCSS approach.  
+Quite a few things were inspired by the ITCSS architecture and its real-life incarnation 
+&mdash; Inuitcss framework, which I extended and adapted to my development style.
 
 
 ## Structure
 
 ### Config
 
-Here we have partials housing global variables that we'll be using throughout our code. 
+Here we have global variables that we'll be using throughout our code. 
 Think typography settings, color palette, spacing units, breakpoints, z-index layers, and so on. 
 Note that component-specific variables such as `$carousel-width` are defined in component 
 partials. This way we keep this layer slim, and can easily find most variables alongside 
@@ -26,8 +26,8 @@ the code that uses them.
 ### Tools
 
 Tools are mixins and functions that need to be available globally.
-For example, it can be a clearfix mixin or a function that provides access 
-to colors defined in the global color palette map. Any mixin or function that 
+For example, it can be a clearfix mixin or a function to access 
+colors from the global color palette map. Any mixin or function that 
 does not need accessing globally belongs in the partial to which it relates. 
 The Tools layer comes after the Config layer because a function or a mixin may 
 require one of the global variables as a default parameter.
@@ -100,8 +100,7 @@ what these classes do when we look at the markup (e.g. `.u-clearfix {}`)
 **So why Goodrocket?** 
 Because a good rocket will take you really far really fast. And it won't explode in the process. 
 I thought this was a good metaphor for a CSS starter kit. Hint: there is a sister project
-[Goodrocket Jekyll](https://github.com/ivanbabko/goodrocket-jekyll). It's another boilerplate, but this time
-for CMS and build system. Check it out.
+[Goodrocket Jekyll](https://github.com/ivanbabko/goodrocket-jekyll). It is a scaffolding for CMS and build system. Check it out.
 
 **Why another boilerplate?**
 I find it hard to use CSS frameworks or other people's boilerplates "as is". I have to understand fully what 
