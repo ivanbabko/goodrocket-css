@@ -5,8 +5,8 @@ The aim is to provide a solid structure and sensible defaults to jump start the
 development. 
 
 It uses the best of Sass and avoids its dangerous features. So no things like `@extend` 
-or deep nesting. It is based on BEM naming conventions and OOCSS approach.  
-Quite a few things were inspired by the ITCSS architecture and its real-life incarnation 
+or deep nesting. It is based on BEM naming conventions and OOCSS approach.  Quite a few 
+things were inspired by the ITCSS architecture and its real-life incarnation 
 &mdash; Inuitcss framework, which I extended and adapted to my development style.
 
 
@@ -14,11 +14,10 @@ Quite a few things were inspired by the ITCSS architecture and its real-life inc
 
 ### Config
 
-Here we have global variables that we'll be using throughout our code. 
-Think typography settings, color palette, spacing units, breakpoints, z-index layers, and so on. 
-Note that component-specific variables such as `$carousel-width` are defined in component 
-partials. This way we keep this layer slim, and can easily find most variables alongside 
-the code that uses them.
+Here we have global variables that we'll be using throughout our code. Think typography settings, 
+color palette, spacing units, breakpoints, z-index layers, and so on. Note that component-specific 
+variables such as `$carousel-width` are defined in component partials. This way we keep this layer 
+slim, and can easily find most variables alongside the code that uses them.
 
 **Note:** Config layer should not output any CSS.
 
