@@ -94,3 +94,16 @@ what these classes do when we look at the markup (e.g. `.u-clearfix {}`)
 
 - [CSS Guidelines](http://cssguidelin.es)
 - [Sass Guidelines](https://sass-guidelin.es)
+
+## Frequently Asked Questions
+
+**So why Goodrocket?** 
+Because a good rocket will take you really far really fast. And it won't explode in the process. 
+I thought this was a good metaphor for a starting CSS kit. Hint: there is a sister project
+[Goodrocket Jekyll](https://github.com/ivanbabko/goodrocket-jekyll). It's another boilerplate, but this time
+for CMS and build system. Check it out.
+
+**Why another boilerplate?**
+I find it hard to use CSS frameworks or other people's boilerplates "as is". I have to understand fully what 
+is under the hood to trust the system, and when I figure things out, I start disagreeing and customizing. 
+So I figured I'll just create my own opinionated starting kit and find peace.
