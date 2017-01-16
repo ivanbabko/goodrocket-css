@@ -70,6 +70,10 @@ or qualifying the selectors. Aim to keep the specificity graph flat.
 
 **Note:** Component classes are prefixed with a `c-` to help us understand
 what these classes do when we look at the markup (e.g., `<a class="c-btn">`).
+Component classes can be combined with Object classes in the markup 
+to take advantage of already available abstractions in the Objects layer. 
+For example, `<div class="o-media c-comment">` means we're extending media
+object and creating its specific implementation &mdash; a comment block.
 
 
 ### Utilities
