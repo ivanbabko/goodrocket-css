@@ -2,7 +2,7 @@
 
 This is a design free CSS starting kit for writing modular, maintainable, and scalable CSS. 
 The aim is to provide a solid structure and sensible defaults to jump start the UI development
-and then be able to maintain the project without losing our minds.
+and then be able to maintain the project without going nuts.
 
 It uses the best of Sass and avoids its dangerous features. So no things like `@extend` 
 or deep nesting. It is based on BEM naming conventions and OOCSS approach. Quite a few 
