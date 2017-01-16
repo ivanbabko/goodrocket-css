@@ -1,10 +1,11 @@
 # Goodrocket CSS
 
 This is a design free CSS starting kit for writing modular, maintainable, and scalable CSS. 
-The aim is to provide a solid structure and sensible defaults to jump start the UI development. 
+The aim is to provide a solid structure and sensible defaults to jump start the UI development
+and then be able to maintain the project without losing our minds.
 
 It uses the best of Sass and avoids its dangerous features. So no things like `@extend` 
-or deep nesting. It is based on BEM naming conventions and OOCSS approach.  Quite a few 
+or deep nesting. It is based on BEM naming conventions and OOCSS approach. Quite a few 
 things were inspired by the ITCSS architecture and its real-life incarnation 
 &mdash; Inuitcss framework, which I extended and adapted to my development style.
 
@@ -14,7 +15,7 @@ things were inspired by the ITCSS architecture and its real-life incarnation
 ### Config
 
 Here we have global variables that we'll be using throughout our code. Think typography settings, 
-color palette, spacing units, breakpoints, z-index layers, and so on. Note that component-specific 
+color palette, spacing units, breakpoints, z-index layers, and so on. Component-specific 
 variables such as `$carousel-width` are defined in component partials. This way we keep this layer 
 slim, and can easily find most variables alongside the code that uses them.
 
@@ -23,12 +24,11 @@ slim, and can easily find most variables alongside the code that uses them.
 
 ### Tools
 
-Tools are mixins and functions that need to be available globally.
-For example, it can be a clearfix mixin or a function to access 
-colors from the global color palette map. Any mixin or function that 
-does not need accessing globally belongs in the partial to which it relates. 
-The Tools layer comes after the Config layer because a function or a mixin may 
-require one of the global variables as a default parameter.
+Tools are mixins and functions that need to be available globally because we'll be using them
+repeatedly throughout our code. For example, it can be a clearfix mixin or a function to access 
+colors from the global color palette map. Any mixin or function that does not need accessing 
+globally belongs in the partial to which it relates. The Tools layer comes after the Config layer 
+because a function or a mixin may require one of the global variables as a default parameter.
 
 **Note:** Tools layer should not output any CSS.
 
@@ -36,12 +36,13 @@ require one of the global variables as a default parameter.
 ### Generic
 
 The Generic layer is the first one that actually produces any CSS. It houses
-very high-level, far reaching styles so it affects a lot of the DOM. This
-layer is seldom modified, and is usually the same across any projects you work on.
+very high-level, far reaching styles so it affects a lot of the DOM.
 It contains things like Normalize.css, box-sizing rules, CSS resets, etc.
+
 We can also include bare element styles in here to define how unclassed HTML elements
 would look like (e.g., `<h1>-<h6>`, `<a>`, `<ul>`, `<table>`, and so on).
-I prefer not to do so and style them as part of components.
+I prefer not to do so because there is a high chance that these default element 
+styles will have be overwritten most of the times.
 
 
 ### Objects
@@ -49,7 +50,7 @@ I prefer not to do so and style them as part of components.
 Objects are abstracted, design-free, reusable code patterns. They provide
 structure for our templates and for our UI components. This can be, for example, 
 a grid system, media object, ratio container, i.e. things that we tend to 
-repeat again and again in different places. This is the first 
+repeat again and again in our code for different UI elements. This is the first 
 layer in which class-based selectors are used. This layer affects less of 
 the DOM than the last layer and has a higher specificity because we bind on 
 to classes.
@@ -61,12 +62,12 @@ these classes do when we look at the markup (e.g. `<div class="o-media">`).
 ### Components
 
 This is where the majority of the work happens after initial project set-up.
-We still use only classes here, so the specificity doesn't increase.
-However, this layer is more explicit than the Objects layer because we style 
-recognisable pieces of UI here (e.g. `.c-modal {}`). We shouldn't
-find any selectors with a lower specificity than a class in this layer.
-At the same time, we should avoid increasing specificity by nesting, chaining, 
-or qualifying the selectors. Aim to keep the specificity graph flat.
+Here we style recognisable pieces of UI (e.g. `.c-modal {}`). We still use 
+only classes here, so the specificity doesn't increase. However, this layer is 
+more explicit than the Objects layer because . We shouldn't find any selectors 
+with a lower specificity than a class in this layer. At the same time, we should
+aim to keep the specificity graph flat. Avoid unnecessary nesting, chaining, or 
+qualifying the selectors. 
 
 **Note:** Component classes are prefixed with a `c-` to help us understand
 what these classes do when we look at the markup (e.g., `<a class="c-btn">`).
@@ -83,7 +84,7 @@ This layer comes last, so it beats all other layers. Utilities have the power to
 override anything in our markup. We can optionally choose to generate utility classes
 with `!important` to make them really heavy-weight.
 
-Also in the initial stages of development or in prototyping, we can speed things up
+In the initial stages of development or in prototyping, we can speed things up
 by relying on utility classes (together with object classes) to build pages. This 
 resembles functional CSS approach promoted by frameworks like 
 [Tachyons](https://github.com/tachyons-css/tachyons/) or [Basscss](https://github.com/basscss/basscss).
@@ -94,6 +95,7 @@ what these classes do when we look at the markup (e.g. `<div class="u-clearfix">
 
 ## Recommended reading
 
+- [BEM 101](https://css-tricks.com/bem-101)
 - [CSS Guidelines](http://cssguidelin.es)
 - [Sass Guidelines](https://sass-guidelin.es)
 
