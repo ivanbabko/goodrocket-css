@@ -42,7 +42,7 @@ It contains things like Normalize.css, box-sizing rules, CSS resets, etc.
 We can also include bare element styles in here to define how unclassed HTML elements
 would look like (e.g., `<h1>-<h6>`, `<a>`, `<ul>`, `<table>`, and so on).
 I prefer not to do so because there is a high chance that these default element 
-styles will have be overwritten most of the times.
+styles will be overwritten most of the time.
 
 
 ### Objects
@@ -63,10 +63,9 @@ these classes do when we look at the markup (e.g. `<div class="o-media">`).
 
 This is where the majority of the work happens after initial project set-up.
 Here we style recognisable pieces of UI (e.g. `.c-modal {}`). We still use 
-only classes here, so the specificity doesn't increase. However, this layer is 
-more explicit than the Objects layer because . We shouldn't find any selectors 
+only classes here, so the specificity doesn't increase. We shouldn't find any selectors 
 with a lower specificity than a class in this layer. At the same time, we should
-aim to keep the specificity graph flat. Avoid unnecessary nesting, chaining, or 
+aim not to increase the specificity. Avoid unnecessary nesting, chaining, or 
 qualifying the selectors. 
 
 **Note:** Component classes are prefixed with a `c-` to help us understand
