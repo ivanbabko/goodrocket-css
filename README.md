@@ -1,8 +1,7 @@
 # Goodrocket CSS
 
-This is a design free CSS starting kit for writing modular, scalable, and maintainable CSS. 
-The aim is to provide a solid structure and sensible defaults to jump start the UI
-development. 
+This is a design free CSS starting kit for writing modular, maintainable, and scalable CSS. 
+The aim is to provide a solid structure and sensible defaults to jump start the UI development. 
 
 It uses the best of Sass and avoids its dangerous features. So no things like `@extend` 
 or deep nesting. It is based on BEM naming conventions and OOCSS approach.  Quite a few 
@@ -56,7 +55,7 @@ the DOM than the last layer and has a higher specificity because we bind on
 to classes.
 
 **Note:** Object classes are prefixed with a `o-` to help us understand what
-these classes do when we look at the markup (e.g. `.o-media {}`).
+these classes do when we look at the markup (e.g. `<div class="o-media">`).
 
 
 ### Components
@@ -70,7 +69,7 @@ At the same time, we should avoid increasing specificity by nesting, chaining,
 or qualifying the selectors. Aim to keep the specificity graph flat.
 
 **Note:** Component classes are prefixed with a `c-` to help us understand
-what these classes do when we look at the markup (e.g., `.c-btn {}`).
+what these classes do when we look at the markup (e.g., `<a class="c-btn">`).
 
 
 ### Utilities
@@ -81,12 +80,12 @@ override anything in our markup. We can optionally choose to generate utility cl
 with `!important` to make them really heavy-weight.
 
 Also in the initial stages of development or in prototyping, we can speed things up
-by relying on utility classes to build pages. This resembles functional CSS approach
-promoted by frameworks like [Tachyons](https://github.com/tachyons-css/tachyons/) or 
-[Basscss](https://github.com/basscss/basscss).
+by relying on utility classes (together with object classes) to build pages. This 
+resembles functional CSS approach promoted by frameworks like 
+[Tachyons](https://github.com/tachyons-css/tachyons/) or [Basscss](https://github.com/basscss/basscss).
 
 **Note:** Utility classes are prefixed with a `u-` to help us understand
-what these classes do when we look at the markup (e.g. `.u-clearfix {}`)
+what these classes do when we look at the markup (e.g. `<div class="u-clearfix">`)
 
 
 ## Recommended reading
@@ -97,9 +96,11 @@ what these classes do when we look at the markup (e.g. `.u-clearfix {}`)
 ## Frequently Asked Questions
 
 **So why Goodrocket?** 
-Because a good rocket will take you really far really fast. And it won't explode in the process. 
-I thought this was a good metaphor for a CSS starter kit. Hint: there is a sister project
-[Goodrocket Jekyll](https://github.com/ivanbabko/goodrocket-jekyll). It is a scaffolding for CMS and build system. Check it out.
+I thought this was a good metaphor for a modular CSS boilerplate with focus on maintainability and scalability. 
+Because a good rocket will take you really far really fast. And it won't explode in the process. Also rockets are made of modules.
+
+Hint: there is a sister project [Goodrocket Jekyll](https://github.com/ivanbabko/goodrocket-jekyll). 
+It is a scaffolding for CMS and build system. Check it out.
 
 **Why another boilerplate?**
 I find it hard to use CSS frameworks or other people's boilerplates "as is". I have to understand fully what 
