@@ -22,7 +22,7 @@ slim, and can easily find most variables alongside the code that uses them.
 **Note:** Config layer should not output any CSS.
 
 ```scss
-@import "config/config.typography"; // Typography settings
+"config/config.typography"; // Typography settings
 @import "config/config.colors"; // Color palette definition
 @import "config/config.spacing"; // Global spacing units
 @import "config/config.responsive"; // Responsive settings
