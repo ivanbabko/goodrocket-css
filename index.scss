@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+// Use this index file if you build system supports globbing
+
+@import "config/**/*.scss";
+@import "tools/**/*.scss";
+@import "generic/**/*.scss";
+@import "objects/**/*.scss";
+@import "components/**/*.scss";
+@import "utilities/**/*.scss";
