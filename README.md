@@ -21,6 +21,14 @@ slim, and can easily find most variables alongside the code that uses them.
 
 **Note:** Config layer should not output any CSS.
 
+```scss
+@import "config/config.typography"; // Typography settings
+@import "config/config.colors"; // Color palette definition
+@import "config/config.spacing"; // Global spacing units
+@import "config/config.responsive"; // Responsive settings
+@import "config/config.z-index"; // Z-index layers management
+@import "config/config.misc"; // Misc global variables
+```
 
 ### Tools
 
@@ -33,6 +41,15 @@ because a function or a mixin may require one of the global variables as a defau
 **Note:** Tools layer should not output any CSS.
 
 
+```scss
+@import "tools/tools.fs"; // Function to access global $type-scale map.
+@import "tools/tools.c"; // Function to access global $color-palette map.
+@import "tools/tools.z"; // Function to access global $z-layers map.
+@import "tools/tools.clearfix"; // Mixin for micro clearfix.
+@import "tools/tools.hide-visually"; // Mixin for accessibly hiding elements.
+@import "tools/tools.mq"; // Sass MQ: Mixin for writing media queries.
+```
+
 ### Generic
 
 The Generic layer is the first one that actually produces any CSS. It houses
@@ -44,6 +61,11 @@ would look like (e.g., `<h1>-<h6>`, `<a>`, `<ul>`, `<table>`, and so on).
 I prefer not to do so because there is a high chance that these default element 
 styles will be overwritten most of the time.
 
+```scss
+@import "generic/generic.box-sizing"; // Better default `box-sizing`.
+@import "generic/generic.reset"; // Combination of reset and normalize.
+@import "generic/generic.page"; // Simple page level setup.
+```
 
 ### Objects
 
@@ -58,6 +80,16 @@ to classes.
 **Note:** Object classes are prefixed with a `o-` to help us understand what
 these classes do when we look at the markup (e.g. `<div class="o-media">`).
 
+```scss
+@import "objects/objects.container"; // Page constraint object.
+@import "objects/objects.grid"; // Generic layout module.
+@import "objects/objects.media"; // Image- and text-like content side by side.
+@import "objects/objects.flag"; // Table-layout-based advancement on the Media object.
+@import "objects/objects.block"; // Image-on-top-of-text object.
+@import "objects/objects.ratio"; // A wrapper for maintaining aspect ratio of content.
+@import "objects/objects.table"; // Classes for manipulating `table`s.
+@import "objects/objects.pack"; // Pack items into available horizontal space.
+```
 
 ### Components
 
@@ -75,6 +107,10 @@ to take advantage of already available abstractions in the Objects layer.
 For example, `<div class="o-media c-comment">` means we're extending media
 object and creating its specific implementation &mdash; a comment block.
 
+```scss
+@import "components/components.c-icon"; // Default icon from inline SVG sprite
+@import "components/components.button"; // Buttons!
+```
 
 ### Utilities
 
@@ -91,6 +127,15 @@ resembles functional CSS approach promoted by frameworks like
 **Note:** Utility classes are prefixed with a `u-` to help us understand
 what these classes do when we look at the markup (e.g. `<div class="u-clearfix">`)
 
+```scss
+@import "utilities/utilities.clearfix"; // Bind the clearfix mixin onto a utility class.
+@import "utilities/utilities.widths"; // Width helper classes.
+@import "utilities/utilities.font-sizes"; // Reassigning text sizes to helper classes.
+@import "utilities/utilities.spacing"; // Spacing classes to nudge bits of the DOM around.
+@import "utilities/utilities.hide"; // Helper classes to hide content.
+@import "utilities/utilities.text-align"; // Helper classes to align text horizontally.
+@import "utilities/utilities.bfc"; // Utility classes for to manipulate block formatting context.
+```
 
 ## Recommended reading
 
