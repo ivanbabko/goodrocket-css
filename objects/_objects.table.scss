@@ -1,7 +1,7 @@
 /* ==========================================================================
-   
+
    @TABLE OBJECT
-   
+
    ========================================================================== */
 
 /**
@@ -48,20 +48,20 @@
 
 }
 
-.o-table--sm {
+.o-table--s {
 
   th,
   td {
-    padding: $spacing-sm;
+    padding: $spacing-s;
   }
 
 }
 
-.o-table--lg {
+.o-table--l {
 
   th,
   td {
-    padding: $spacing-lg;
+    padding: $spacing-l;
   }
 
 }

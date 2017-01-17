@@ -30,8 +30,17 @@
 // Generate responsive utilities to hide content?
 $responsive-hiding: true !default;
 
-// Sass map of breakpoints used to generate responsive helpers.
+
+// Sass map of breakpoints used to generate responsive helpers0
+//
+// $hide-breakpoints: (
+//  'sm': 640px,
+//  'md': 1024px,
+//  'lg': 1280px,
+// );
+
 $hide-breakpoints: $breakpoints !default;
+
 
 // The below loop will generate us a suite of classes like:
 //
@@ -43,11 +52,11 @@ $hide-breakpoints: $breakpoints !default;
   @each $bp-name, $bp-value in $hide-breakpoints {
 
     @include mq($from: $bp-name) {
-      .u-hide-on-#{$bp-name}-and-up {display: none;}
+      .u-hide-on-#{$bp-name}-and-up {display: none !important;}
     }
 
     @include mq($until: $bp-name) {
-      .u-hide-until-#{$bp-name} {display: none;}
+      .u-hide-until-#{$bp-name} {display: none !important;}
     }
 
   }

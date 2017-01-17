@@ -19,8 +19,8 @@
 /**
  * 1. Prevent adjustments of font size after orientation changes in
  *    IE on Windows Phone and in iOS.
- * 2. Make fonts on OS X look more consistent with other systems and prevent 
- *    an ugly flickering of font "thickness" when animations start and stop. 
+ * 2. Make fonts on OS X look more consistent with other systems and prevent
+ *    an ugly flickering of font "thickness" when animations start and stop.
  * 3. Correct small issue with animations. See:
  *    https://css-tricks.com/almanac/properties/b/backface-visibility/
  */
@@ -119,7 +119,7 @@ img[height] {
  */
 
 figure {
-  margin:0; 
+  margin: 0;
 }
 
 /**
@@ -132,7 +132,7 @@ iframe {
 
 
 /*
- * Remove the gap between audio, canvas, iframes, videos 
+ * Remove the gap between audio, canvas, iframes, videos
  * and the bottom of their containers.
  */
 
@@ -177,10 +177,10 @@ svg:not(:root) {
    ========================================================================== */
 
 /**
- * Long-gone are the days where all hyperlinks were blue, underlined and only 
- * wrapped inline content. Below default rules give less surprises when 
- * applying links to things. Sometimes you just want to apply an underline, 
- * sometimes only a color. Sometimes nothing, because you just wrapped an 
+ * Long-gone are the days where all hyperlinks were blue, underlined and only
+ * wrapped inline content. Below default rules give less surprises when
+ * applying links to things. Sometimes you just want to apply an underline,
+ * sometimes only a color. Sometimes nothing, because you just wrapped an
  * entire thumbnail or caption.
  *
  * 1. Make links inherit the color intended for the region they are in.
@@ -238,11 +238,11 @@ p {
 
 
 /**
- * 1. Remove default bullets and numbering from lists. No need to strip them 
- *    off repeatedly every time you make a menu or any other component that is 
- *    semantically a list. When bullets or numbering are required, create a 
- *    component using pseudo-elements approach. It provides more customization 
- *    options. 
+ * 1. Remove default bullets and numbering from lists. No need to strip them
+ *    off repeatedly every time you make a menu or any other component that is
+ *    semantically a list. When bullets or numbering are required, create a
+ *    component using pseudo-elements approach. It provides more customization
+ *    options.
  *    See: http://blog.teamtreehouse.com/customize-ordered-lists-pseudo-element
  *
  * 2. Reset default margin and padding in all browsers.
@@ -426,7 +426,7 @@ button:-moz-focusring,
 
 /**
  * 1. Remove default fieldset styles.
- * 2. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;` 
+ * 2. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
  *    on fieldsets.
  */
 
@@ -442,7 +442,7 @@ fieldset {
  * 1. Remove the default vertical scrollbar in IE.
  * 2. Allow only vertical resizing of textareas.
  */
- 
+
 textarea {
   overflow: auto; /* [1] */
   resize: vertical; /* [2] */

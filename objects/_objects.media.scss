@@ -59,7 +59,7 @@
 
     > .o-media__img {
       margin-right: 0;
-      margin-left:  $spacing-xs;
+      margin-left: $spacing-xs;
     }
 
   }
@@ -67,17 +67,17 @@
 }
 
 
-.o-media--sm {
+.o-media--s {
 
   > .o-media__img {
-    margin-right: $spacing-sm;
+    margin-right: $spacing-s;
   }
 
   &.o-media--reverse {
 
     > .o-media__img {
       margin-right: 0;
-      margin-left:  $spacing-sm;
+      margin-left: $spacing-s;
     }
 
   }
@@ -85,17 +85,17 @@
 }
 
 
-.o-media--lg {
+.o-media--l {
 
   > .o-media__img {
-    margin-right: $spacing-lg;
+    margin-right: $spacing-l;
   }
 
   &.o-media--reverse {
 
     > .o-media__img {
       margin-right: 0;
-      margin-left:  $spacing-lg;
+      margin-left:  $spacing-l;
     }
 
   }

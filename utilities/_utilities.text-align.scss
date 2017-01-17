@@ -1,6 +1,6 @@
 /* ==========================================================================
 
-   @TEXT-ALIGN UTILITIES
+   @TYPOGRAPHY UTILITIES
 
    ========================================================================== */
 
@@ -20,12 +20,24 @@
 // Generate responsive text-align utilities?
 $responsive-text-align: true !default;
 
-// Sass map of breakpoints used to generate responsive helpers.
+
+// Sass map of breakpoints used to generate responsive helpers. E.g.:
+//
+// $text-align-breakpoints: (
+//  'sm': 640px,
+//  'md': 1024px,
+//  'lg': 1280px,
+// );
+
 $text-align-breakpoints: $breakpoints !default;
 
+
 // Separator for the breakpoints suffix in the class name, e.g.:
+//
 // <h2 class="u-text-center@mobile"></h2>
+
 $text-align-breakpoint-separator: $breakpoint-separator !default;
+
 
 // The below loop will generate us a suite of classes like:
 //

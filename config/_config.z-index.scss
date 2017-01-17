@@ -4,8 +4,8 @@
 //
 // ============================================================================
 
-// Global map of z-index values for easier management. 
-// Supports nested z-index contexts via nested maps. 
+// Global map of z-index values for easier management.
+// Supports nested z-index contexts via nested maps.
 // Accessed using custom z() function, e.g.: `z-index: z(modal, close)`
 //
 // Further reading:

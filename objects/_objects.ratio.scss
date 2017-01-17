@@ -53,7 +53,7 @@ $ratios: (
 
 
 
-/* stylelint-disable */
+
 
 /* Ratio variants.
    ========================================================================== */
@@ -65,9 +65,12 @@ $ratios: (
  *
  */
 
-.o-ratio--cinemascope { 
-  padding-bottom: 42.55319% 
+/* 2.35:1 */
+.o-ratio--cinemascope {
+  padding-bottom: 42.55319%
 }
+
+/* stylelint-disable */
 
 @each $ratio in $ratios {
 

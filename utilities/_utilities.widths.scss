@@ -30,7 +30,7 @@
  *
  */
 
-
+ /* stylelint-disable string-quotes */
 
 
 
@@ -178,9 +178,13 @@ $widths-delimiter: \/ !default;
 
 $widths-breakpoints: $breakpoints !default;
 
+
 // Separator for the breakpoints suffix in the class name, e.g.:
+//
 // <div class="u-3/12@mobile">
+
 $widths-breakpoint-separator: $breakpoint-separator !default;
+
 
 // The below loop will generate grid system(s) for each of our breakpoints
 // defined in the $widths-breakpoints list, e.g.:
@@ -200,3 +204,5 @@ $widths-breakpoint-separator: $breakpoint-separator !default;
   }
 
 }
+
+ /* stylelint-enable string-quotes */

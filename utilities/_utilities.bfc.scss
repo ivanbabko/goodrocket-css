@@ -39,12 +39,24 @@
 // Generate responsive helpers?
 $responsive-bfc: true !default;
 
-// Sass map of breakpoints used to generate responsive helpers.
+
+// Sass map of breakpoints used to generate responsive helpers. E.g.:
+//
+// $bfc-breakpoints: (
+//  'sm': 640px,
+//  'md': 1024px,
+//  'lg': 1280px,
+// );
+
 $bfc-breakpoints: $breakpoints !default;
 
+
 // Separator for the breakpoints suffix in the class name, e.g.:
+//
 // <div class="u-float-left@mobile">
+
 $bfc-breakpoint-separator: $breakpoint-separator !default;
+
 
 // The below loop will generate us a suite of classes like:
 //

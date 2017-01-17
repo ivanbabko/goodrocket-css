@@ -8,7 +8,6 @@
  * Attach our clearfix mixin to a utility class.
  */
 
-.u-clearfix,
-.u-cf {
+.u-clearfix {
   @include clearfix();
 }

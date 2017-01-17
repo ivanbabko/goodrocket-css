@@ -20,6 +20,11 @@
  */
 
 
+/* stylelint-disable string-quotes */
+
+
+
+
 
 
 
@@ -114,7 +119,9 @@ $font-sizes-breakpoints: $breakpoints !default;
 
 
 // Separator for the breakpoints suffix in the class name, e.g.:
+//
 // <h2 class="u-h3@mobile"></h2>
+
 $font-sizes-breakpoint-separator: $breakpoint-separator !default;
 
 
@@ -139,3 +146,5 @@ $font-sizes-breakpoint-separator: $breakpoint-separator !default;
   }
 
 }
+
+ /* stylelint-enable string-quotes */

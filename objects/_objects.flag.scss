@@ -100,34 +100,34 @@
 
 }
 
-.o-flag--sm {
+.o-flag--s {
 
   > .o-flag__img {
-    padding-right: $spacing-sm;
+    padding-right: $spacing-s;
   }
 
   &.o-flag--reverse {
 
     > .o-flag__img {
       padding-right: 0;
-      padding-left: $spacing-sm;
+      padding-left: $spacing-s;
     }
 
   }
 
 }
 
-.o-flag--lg {
+.o-flag--l {
 
   > .o-flag__img {
-    padding-right: $spacing-lg;
+    padding-right: $spacing-l;
   }
 
   &.o-flag--reverse {
 
     > .o-flag__img {
       padding-right: 0;
-      padding-left: $spacing-lg;
+      padding-left: $spacing-l;
     }
 
   }
