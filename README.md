@@ -108,7 +108,7 @@ For example, `<div class="o-media c-comment">` means we're extending media
 object and creating its specific implementation &mdash; a comment block.
 
 ```scss
-@import "components/components.c-icon"; // Default icon from inline SVG sprite
+@import "components/components.icon"; // Default icon from inline SVG sprite
 @import "components/components.button"; // Buttons!
 ```
 
