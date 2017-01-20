@@ -75,10 +75,6 @@ layer in which class-based selectors are used. This layer affects less of
 the DOM than the last layer and has a higher specificity because we bind on 
 to classes.
 
-**IMPORTANT:** Modify base object classes with extreme caution after your project
-has gone live. Objects provide core structurual styles that can be used for
-multiple UI components across your application. When in doubt, add a modifier.
-
 **Note:** Object classes are prefixed with a `o-` to help us understand what
 these classes do when we look at the markup (e.g. `<div class="o-media">`).
 
@@ -96,12 +92,14 @@ these classes do when we look at the markup (e.g. `<div class="o-media">`).
 ### Components
 
 This is where the majority of the work happens after initial project set-up.
-Here we style recognisable pieces of UI (e.g. `.c-modal {}`). We still use 
-only classes here, so the specificity doesn't increase. We shouldn't find any selectors 
-with a lower specificity than a class in this layer. At the same time, we should
-aim not to increase the specificity. Avoid nesting, chaining, or 
-qualifying the selectors. Keep the specificity flat by using [BEM naming](https://css-tricks.com/bem-101) 
-to convey structure in your CSS.
+We still use **only** classes here, so the specificity doesn't increase. 
+However Components layer is more explicit than Objects layer because we're styling 
+recognisable pieces of UI here (e.g. `.c-modal {}`). 
+
+We shouldn't find any selectors with a lower specificity than a class in this layer. 
+At the same time, we should aim not to increase the specificity. Avoid nesting, 
+chaining, or qualifying the selectors. Keep the specificity flat and use 
+[BEM naming](https://css-tricks.com/bem-101) to convey structure in your CSS.
 
 Component classes can be combined with Object classes in the markup 
 to take advantage of already available abstractions in the Objects layer. 
@@ -119,13 +117,15 @@ what these classes do when we look at the markup (e.g., `<a class="c-btn">`).
 
 ### Utilities
 
-This is where we put our utility classes (e.g. `.u-hide {}` or `.u-margin-bottom-xl {}`).
+This is where we put our utility classes (e.g. `.u-hide {}` or `.u-clearfix {}`).
+Utilities layer beats all other layers, and has the power to override anything that has gone
+before it. It contains very explicit selectors (e.g. `.u-h1 {font-size: 48px}`). 
 
 Utilities play important role in Goodrocket CSS. With utilities we abstract and bind 
-to classes commonly used styling properties. These are spacing properties (margin and padding), 
-typography properties (font-sizes, line-heights), widths, and so on. Utilities define these 
-properties once in our stylesheet based on global variables in Config layer. This lets us 
-apply these properties in markup without having to write any additional CSS code.
+to classes commonly used styling properties (e.g., margins, paddings, font-sizes, widths). 
+Utilities define these properties once in our stylesheet based on global variables in 
+Config layer. This lets us apply these properties in markup without having to write any 
+additional CSS code.
 
 Our UI components become really flexible and reusable because we can easily modify every instance
 using utility classes. This includes modifications necessary to adapt to different screen
@@ -154,10 +154,6 @@ This resembles functional CSS approach promoted by frameworks like
 [Tachyons](https://github.com/tachyons-css/tachyons/) or [Basscss](https://github.com/basscss/basscss),
 although we are not compiling our UI components solely from utility classes. 
 We utilize them only as an abstraction for commonly used and often overridden properties.
-
-Utilities layer goes last in our source order, because it is to beat all other layers. We can 
-optionally choose to generate utility classes with `!important` to increase specificity
-in case our build system doesn't output CSS in specific order.
 
 **Note:** Utility classes are prefixed with a `u-` to help us understand
 what these classes do when we look at the markup (e.g. `<div class="u-clearfix">`)
