@@ -133,7 +133,7 @@ sizes. Take a look at the example below.
   <!-- This grid item occupies 50% of space. It becomes 33% on desktop -->
   <div class="o-grid__item  u-1/2  u-1/3@desktop"> 
   
-    <!-- This component has small bottom margin. It becomes large on desktop -->
+    <!-- This instance of the component has small bottom margin. It becomes large on desktop -->
     <div class="c-component  u-margin-bottom-s  u-margin-bottom-l@desktop">
     
       <!-- This heading is 24px (.u-h3). On desktop it becomes 36px (.u-h2) -->
