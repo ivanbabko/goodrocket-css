@@ -4,8 +4,7 @@ This is a design free CSS starting kit for writing modular, maintainable, and sc
 The aim is to provide a solid structure and sensible defaults to jump start the UI development
 and then be able to maintain the project without going nuts.
 
-It uses the best of Sass and avoids its dangerous features. So no things like `@extend` 
-or deep nesting. It is based on BEM naming conventions and OOCSS approach. A few 
+It is based on Sass preprocessor, BEM naming conventions, and OOCSS approach. A few 
 things were inspired by the ITCSS architecture and its real-life incarnation 
 &mdash; Inuitcss framework, which I extended and adapted to my development style.
 
