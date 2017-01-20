@@ -148,7 +148,8 @@ sizes. Take a look at the example below.
 
 This resembles functional CSS approach promoted by frameworks like 
 [Tachyons](https://github.com/tachyons-css/tachyons/) or [Basscss](https://github.com/basscss/basscss),
-but we are not basing our styles solely on utilities.
+although we are not compiling our UI components solely from utility classes. 
+We utilize them only as an abstraction for commonly used and often overridden properties.
 
 Utilities layer goes last in our source order, because it is to beat all other layers. We can 
 optionally choose to generate utility classes with `!important` to increase specificity
