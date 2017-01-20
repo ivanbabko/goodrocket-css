@@ -9,7 +9,7 @@
  */
 
 $container-width-xs     : 600px  !default;
-$container-width-sm     : 800px  !default;
+$container-width-s      : 800px  !default;
 $container-width        : 1200px !default;
 $container-width-lg     : 1400px !default;
 $container-width-xl     : 1600px !default;
@@ -34,11 +34,11 @@ $container-width-xl     : 1600px !default;
 }
 
 .o-container-s {
-  max-width: $container-width-sm;
+  max-width: $container-width-s;
 }
 
 .o-container-l {
-  max-width: $container-width-lg;
+  max-width: $container-width-l;
 }
 
 .o-container--xl {
