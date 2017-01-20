@@ -125,7 +125,7 @@ typography properties (font-sizes, line-heights), widths, and so on. Utilities d
 properties once in our stylesheet based on variables defined in Config layer. This lets us 
 apply these properties in markup without having to write any additional CSS code.
 
-This makes our UI components very flexible and reusable because we can easily modify every instance
+Our UI components become really flexible and reusable because we can easily modify every instance
 using utility classes. This includes modifications necessary to adapt components to different screen
 sizes. Take a look at the example below. 
 
