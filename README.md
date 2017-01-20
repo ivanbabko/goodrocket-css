@@ -55,9 +55,8 @@ The Generic layer is the first one that actually produces any CSS. It houses
 high-level, far reaching styles. It contains things like Normalize.css, box-sizing 
 rules, CSS reset, etc. We can also include bare HTML element styles in here to define how 
 unclassed HTML elements would look like (e.g., `<h1>`, `<a>`, `<ul>`, `<table>`, and so on).
-I prefer not to do so because there is a high chance that we will be overwriting these
-default element styles a lot. I suggest styling these elements as part of our UI
-components using classes (more on that below).
+However it is strongly suggested to style these elements as part of our UI components 
+using classes (more on that below).
 
 ```scss
 @import "generic/generic.box-sizing"; // Better default `box-sizing`.
@@ -69,8 +68,7 @@ components using classes (more on that below).
 
 Objects are abstracted, design-free, reusable code patterns. They provide
 structure for our templates and for our UI components. This can be, for example, 
-a grid system, media object, ratio container, i.e. things that we tend to 
-repeat again and again in our code for different UI elements. This is the first 
+a grid system, media object, ratio container. This is the first 
 layer in which class-based selectors are used. This layer affects less of 
 the DOM than the last layer and has a higher specificity because we bind on 
 to classes.
@@ -94,12 +92,7 @@ these classes do when we look at the markup (e.g. `<div class="o-media">`).
 This is where the majority of the work happens after initial project set-up.
 We still use **only** classes here, so the specificity doesn't increase. 
 However Components layer is more explicit than Objects layer because we're styling 
-recognisable pieces of UI here (e.g. `.c-modal {}`). 
-
-We shouldn't find any selectors with a lower specificity than a class in this layer. 
-At the same time, we should aim not to increase the specificity. Avoid nesting, 
-chaining, or qualifying the selectors. Keep the specificity flat and use 
-[BEM naming](https://css-tricks.com/bem-101) to convey structure in your CSS.
+recognisable pieces of UI (e.g. `.c-modal {}`). 
 
 Component classes can be combined with Object classes in the markup 
 to take advantage of already available abstractions in the Objects layer. 
@@ -121,11 +114,10 @@ This is where we put our utility classes (e.g. `.u-hide {}` or `.u-clearfix {}`)
 Utilities layer beats all other layers, and has the power to override anything that has gone
 before it. It contains very explicit selectors (e.g. `.u-h1 {font-size: 48px}`). 
 
-Utilities play important role in Goodrocket CSS. With utilities we abstract and bind 
-to classes commonly used styling properties (e.g., margins, paddings, font-sizes, widths). 
-Utilities define these properties once in our stylesheet based on global variables in 
-Config layer. This lets us apply these properties in markup without having to write any 
-additional CSS code.
+With utilities we abstract and bind to classes commonly used styling properties 
+(e.g., margins, paddings, font-sizes, widths). Utilities define these properties once in 
+our stylesheet based on global variables in Config layer. This lets us apply these properties 
+in markup without having to write any additional CSS code.
 
 Our UI components become really flexible and reusable because we can easily modify every instance
 using utility classes. This includes modifications necessary to adapt to different screen
