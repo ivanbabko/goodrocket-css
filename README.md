@@ -117,16 +117,17 @@ what these classes do when we look at the markup (e.g., `<a class="c-btn">`).
 
 ### Utilities
 
-This is where we put our utility classes (e.g. `.u-h1 {}` or `.u-margin-bottom-xl {}`).
+This is where we put our utility classes (e.g. `.u-hide {}` or `.u-margin-bottom-xl {}`).
 
-Utilities play an important role in Goodrocket CSS. With utilities we abstract away and bind 
-to classes styling properties that are responsible for spacing, font-sizes, widths, and so on.
-These properties occur very often in our CSS, plus they are also frequently redefined with media 
-queries. Utilities define these properties once in our stylesheet so we can then reuse them 
-multiple times in markup without having to write any additional CSS code. 
+Utilities play important role in Goodrocket CSS. With utilities we abstract and bind 
+to classes commonly used styling properties. These are spacing properties (margin and padding), 
+typography properties (font-sizes, line-heights), widths, and so on. Utilities define these 
+properties once in our stylesheet based on variables defined in Config layer. This lets us 
+apply these properties in markup without having to write any additional CSS code.
 
 This makes our UI components very flexible and reusable because we can easily modify every instance
-using utility classes. Take a look at the example below. 
+using utility classes. This includes modifications necessary to adapt components to different screen
+sizes. Take a look at the example below. 
 
 ```html
 <div class="o-grid">
@@ -149,10 +150,11 @@ using utility classes. Take a look at the example below.
 
 This resembles functional CSS approach promoted by frameworks like 
 [Tachyons](https://github.com/tachyons-css/tachyons/) or [Basscss](https://github.com/basscss/basscss),
-but we're basing our styles solely on utilities.
+but we are not basing our styles solely on utilities.
 
-Utilities layer goes last in our source order, so it beats all other layers. We can 
-optionally choose to generate specific utility classes with `!important` to make them really heavy-weight.
+Utilities layer goes last in our source order, because it is to beat all other layers. We can 
+optionally choose to generate utility classes with `!important` to increase specificity
+in case our build system doesn't output CSS in specific order.
 
 **Note:** Utility classes are prefixed with a `u-` to help us understand
 what these classes do when we look at the markup (e.g. `<div class="u-clearfix">`)
