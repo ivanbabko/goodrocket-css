@@ -5,7 +5,7 @@ The aim is to provide a solid structure and sensible defaults to jump start the 
 and then be able to maintain the project without going nuts.
 
 It uses the best of Sass and avoids its dangerous features. So no things like `@extend` 
-or deep nesting. It is based on BEM naming conventions and OOCSS approach. Quite a few 
+or deep nesting. It is based on BEM naming conventions and OOCSS approach. A few 
 things were inspired by the ITCSS architecture and its real-life incarnation 
 &mdash; Inuitcss framework, which I extended and adapted to my development style.
 
@@ -83,7 +83,7 @@ these classes do when we look at the markup (e.g. `<div class="o-media">`).
 
 ```scss
 @import "objects/objects.container"; // Page constraint object.
-@import "objects/objects.grid"; // Generic layout module.
+@import "objects/objects.grid"; // Generic layout module. Used together with width utilities.
 @import "objects/objects.media"; // Image- and text-like content side by side.
 @import "objects/objects.flag"; // Table-layout-based advancement on the Media object.
 @import "objects/objects.block"; // Image-on-top-of-text object.
@@ -117,15 +117,42 @@ what these classes do when we look at the markup (e.g., `<a class="c-btn">`).
 
 ### Utilities
 
-This is where we put our utility classes (e.g. `.u-hidden {}` or `.u-clearfix {}`). 
-This layer comes last, so it beats all other layers. Utilities have the power to 
-override anything in our markup. We can optionally choose to generate utility classes
-with `!important` to make them really heavy-weight.
+This is where we put our utility classes (e.g. `.u-h1 {}` or `.u-margin-bottom-xl {}`).
 
-In the initial stages of development or in prototyping, we can speed things up
-by relying on utility classes to build pages. This resembles functional CSS approach 
-promoted by frameworks like [Tachyons](https://github.com/tachyons-css/tachyons/) 
-or [Basscss](https://github.com/basscss/basscss).
+Utilities play an important role in Goodrocket CSS. With utilities we abstract away and bind 
+to classes styling properties that are responsible for spacing, font-sizes, widths, and so on.
+These properties occur very often in our CSS, plus they are also frequently redefined with media 
+queries. Utilities define these properties once in our stylesheet so we can then reuse them 
+multiple times in markup without having to write any additional CSS code. 
+
+This makes our UI components very flexible and reusable because we can easily modify every instance
+using utility classes. Take a look at the example below. 
+
+```html
+<div class="o-grid">
+
+  <!-- This grid item occupies 50% of space. It becomes 33% on desktop -->
+  <div class="o-grid__item  u-1/2  u-1/3@desktop"> 
+  
+    <!-- This component has small bottom margin. It becomes large on desktop -->
+    <div class="c-component  u-margin-bottom-s  u-margin-bottom-l@desktop">
+    
+      <!-- This heading is 24px (.u-h3). On desktop it becomes 36px (.u-h2) -->
+      <h1 class="c-component__heading  u-h3  u-h2@desktop">Heading</h1>
+     
+    </div> 
+    
+  </div>
+  
+</div> 
+```
+
+This resembles functional CSS approach promoted by frameworks like 
+[Tachyons](https://github.com/tachyons-css/tachyons/) or [Basscss](https://github.com/basscss/basscss),
+but we're basing our styles solely on utilities.
+
+Utilities layer goes last in our source order, so it beats all other layers. We can 
+optionally choose to generate specific utility classes with `!important` to make them really heavy-weight.
 
 **Note:** Utility classes are prefixed with a `u-` to help us understand
 what these classes do when we look at the markup (e.g. `<div class="u-clearfix">`)
