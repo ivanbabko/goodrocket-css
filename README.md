@@ -75,6 +75,10 @@ layer in which class-based selectors are used. This layer affects less of
 the DOM than the last layer and has a higher specificity because we bind on 
 to classes.
 
+**IMPORTANT:** Modify base object classes with extreme caution after your project
+has gone live. Objects provide core structurual styles that can be used for
+multiple UI components across your application. When in doubt, add a modifier.
+
 **Note:** Object classes are prefixed with a `o-` to help us understand what
 these classes do when we look at the markup (e.g. `<div class="o-media">`).
 
@@ -95,8 +99,9 @@ This is where the majority of the work happens after initial project set-up.
 Here we style recognisable pieces of UI (e.g. `.c-modal {}`). We still use 
 only classes here, so the specificity doesn't increase. We shouldn't find any selectors 
 with a lower specificity than a class in this layer. At the same time, we should
-aim not to increase the specificity. Avoid unnecessary nesting, chaining, or 
-qualifying the selectors. Keep it flat.
+aim not to increase the specificity. Avoid nesting, chaining, or 
+qualifying the selectors. Keep the specificity flat by using [BEM naming](https://css-tricks.com/bem-101) 
+to convey structure in your CSS.
 
 Component classes can be combined with Object classes in the markup 
 to take advantage of already available abstractions in the Objects layer. 
