@@ -54,10 +54,8 @@ because a function or a mixin may require one of the global variables as a defau
 
 The Generic layer is the first one that actually produces any CSS. It houses
 high-level, far reaching styles. It contains things like Normalize.css, box-sizing 
-rules, CSS resets, etc.
-
-We can also include bare element styles in here to define how unclassed HTML elements
-would look like (e.g., `<h1>-<h6>`, `<a>`, `<ul>`, `<table>`, and so on).
+rules, CSS resets, etc. We can also include bare element styles in here to define how 
+unclassed HTML elements would look like (e.g., `<h1>-<h6>`, `<a>`, `<ul>`, `<table>`, and so on).
 I prefer not to do so because there is a high chance that we will be overwriting these
 default element styles a lot. I suggest styling these elements as part of our UI
 components using classes (more on that below).
