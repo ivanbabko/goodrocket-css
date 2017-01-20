@@ -122,11 +122,11 @@ This is where we put our utility classes (e.g. `.u-hide {}` or `.u-margin-bottom
 Utilities play important role in Goodrocket CSS. With utilities we abstract and bind 
 to classes commonly used styling properties. These are spacing properties (margin and padding), 
 typography properties (font-sizes, line-heights), widths, and so on. Utilities define these 
-properties once in our stylesheet based on variables defined in Config layer. This lets us 
+properties once in our stylesheet based on global variables in Config layer. This lets us 
 apply these properties in markup without having to write any additional CSS code.
 
 Our UI components become really flexible and reusable because we can easily modify every instance
-using utility classes. This includes modifications necessary to adapt components to different screen
+using utility classes. This includes modifications necessary to adapt to different screen
 sizes. Take a look at the example below. 
 
 ```html
