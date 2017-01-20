@@ -22,12 +22,12 @@ slim, and can easily find most variables alongside the code that uses them.
 **Note:** Config layer should not output any CSS.
 
 ```scss
-@import "config/config.typography"; // Typography settings
-@import "config/config.colors"; // Color palette definition
-@import "config/config.spacing"; // Global spacing units
-@import "config/config.responsive"; // Responsive settings
-@import "config/config.z-index"; // Z-index layers management
-@import "config/config.misc"; // Misc global variables
+@import "config/config.typography"; // Typography variables: type scale, type faces, line heights
+@import "config/config.colors"; // Project color palette defined as a Sass map
+@import "config/config.spacing"; // Global spacing units to avoid magic numbers in the code
+@import "config/config.responsive"; // Global breakpoints and settings for responsive utility classes
+@import "config/config.z-index"; // Z-index layers defined as a Sass map for better maintainability
+@import "config/config.misc"; // Misc global variables (border radius, default transition, etc.)
 ```
 
 ### Tools
