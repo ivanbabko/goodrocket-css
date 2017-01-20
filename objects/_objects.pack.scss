@@ -15,7 +15,7 @@
 
 .o-pack {
   width: 100%; /* [1] */
-  margin-left: 0; /* [2] */
+  padding-left: 0; /* [2] */
   display: table;
   table-layout: fixed; /* [3] */
 }
@@ -70,7 +70,7 @@
   border-spacing: $spacing-s;
 }
 
-.o-pack--default {
+.o-pack--m {
   border-spacing: $spacing;
 }
 
