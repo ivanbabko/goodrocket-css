@@ -53,18 +53,19 @@ because a function or a mixin may require one of the global variables as a defau
 ### Generic
 
 The Generic layer is the first one that actually produces any CSS. It houses
-very high-level, far reaching styles so it affects a lot of the DOM.
-It contains things like Normalize.css, box-sizing rules, CSS resets, etc.
+high-level, far reaching styles. It contains things like Normalize.css, box-sizing 
+rules, CSS resets, etc.
 
 We can also include bare element styles in here to define how unclassed HTML elements
 would look like (e.g., `<h1>-<h6>`, `<a>`, `<ul>`, `<table>`, and so on).
-I prefer not to do so because there is a high chance that these default element 
-styles will be overwritten most of the time.
+I prefer not to do so because there is a high chance that we will be overwriting these
+default element styles a lot. I suggest styling these elements as part of our UI
+components using classes (more on that below).
 
 ```scss
 @import "generic/generic.box-sizing"; // Better default `box-sizing`.
 @import "generic/generic.reset"; // Combination of reset and normalize.
-@import "generic/generic.page"; // Simple page level setup.
+@import "generic/generic.page"; // Page level setup.
 ```
 
 ### Objects
@@ -98,18 +99,20 @@ Here we style recognisable pieces of UI (e.g. `.c-modal {}`). We still use
 only classes here, so the specificity doesn't increase. We shouldn't find any selectors 
 with a lower specificity than a class in this layer. At the same time, we should
 aim not to increase the specificity. Avoid unnecessary nesting, chaining, or 
-qualifying the selectors. 
+qualifying the selectors. Keep it flat.
 
-**Note:** Component classes are prefixed with a `c-` to help us understand
-what these classes do when we look at the markup (e.g., `<a class="c-btn">`).
 Component classes can be combined with Object classes in the markup 
 to take advantage of already available abstractions in the Objects layer. 
 For example, `<div class="o-media c-comment">` means we're extending media
 object and creating its specific implementation &mdash; a comment block.
 
+**Note:** Component classes are prefixed with a `c-` to help us understand
+what these classes do when we look at the markup (e.g., `<a class="c-btn">`).
+
 ```scss
 @import "components/components.icon"; // SVG icon styling
 @import "components/components.button"; // Buttons!
+...
 ```
 
 ### Utilities
@@ -120,9 +123,9 @@ override anything in our markup. We can optionally choose to generate utility cl
 with `!important` to make them really heavy-weight.
 
 In the initial stages of development or in prototyping, we can speed things up
-by relying on utility classes (together with object classes) to build pages. This 
-resembles functional CSS approach promoted by frameworks like 
-[Tachyons](https://github.com/tachyons-css/tachyons/) or [Basscss](https://github.com/basscss/basscss).
+by relying on utility classes to build pages. This resembles functional CSS approach 
+promoted by frameworks like [Tachyons](https://github.com/tachyons-css/tachyons/) 
+or [Basscss](https://github.com/basscss/basscss).
 
 **Note:** Utility classes are prefixed with a `u-` to help us understand
 what these classes do when we look at the markup (e.g. `<div class="u-clearfix">`)
