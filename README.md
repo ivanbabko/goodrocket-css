@@ -5,8 +5,7 @@ The aim is to provide a solid structure and sensible defaults to jump start the 
 and then be able to maintain the project without going nuts.
 
 It is based on Sass preprocessor, BEM naming conventions, and OOCSS approach. A few 
-things were inspired by the ITCSS architecture and its real-life incarnation 
-&mdash; Inuitcss framework, which I extended and adapted to my development style.
+things were inspired by the ITCSS architecture and Inuitcss framework, which I extended and adapted to my development style.
 
 
 ## Structure
