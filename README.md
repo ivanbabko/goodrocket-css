@@ -40,11 +40,11 @@ because a function or a mixin may require one of the global variables as a defau
 
 
 ```scss
-@import "tools/tools.fs"; // Function to access global $type-scale map.
-@import "tools/tools.c"; // Function to access global $color-palette map.
-@import "tools/tools.z"; // Function to access global $z-layers map.
+@import "tools/tools.font-size"; // Function to access global $type-scale map.
+@import "tools/tools.color"; // Function to access global $color-palette map.
+@import "tools/tools.z-index"; // Function to access global $z-layers map.
 @import "tools/tools.clearfix"; // Mixin for micro clearfix.
-@import "tools/tools.hide-visually"; // Mixin for accessibly hiding elements.
+@import "tools/tools.hide"; // Mixin for accessibly hiding elements.
 @import "tools/tools.mq"; // Sass MQ: Mixin for writing media queries.
 ```
 
@@ -103,7 +103,7 @@ what these classes do when we look at the markup (e.g., `<a class="c-btn">`).
 
 ```scss
 @import "components/components.icon"; // SVG icon styling
-@import "components/components.button"; // Buttons!
+@import ...
 ...
 ```
 

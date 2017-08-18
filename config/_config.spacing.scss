@@ -6,9 +6,7 @@
 
 // Spacing units scale.
 //
-// By default, the scale is derived from the root font size and is based
-// on the powers of 2. Helpful to avoid magic numbers in the code and to adhere
-// to 8pt grid.
+// By default, the scale is derived from the root font size.
 //
 // Further reading:
 // 1. http://csswizardry.com/2012/11/code-smells-in-css/#magic-numbers
@@ -19,5 +17,7 @@
 $spacing-xs       : 0.25rem;  // 4px
 $spacing-s        : 0.5rem;   // 8px
 $spacing          : 1rem;     // 16px
+$spacing-m        : 1.5rem;   // 24px
 $spacing-l        : 2rem;     // 32px
 $spacing-xl       : 4rem;     // 64px
+$spacing-xxl      : 6rem;     // 96px

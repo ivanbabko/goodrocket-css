@@ -10,7 +10,7 @@
  */
 
 .o-media {
-  @include clearfix;
+  @include cf;
   display: block;
 }
 
@@ -83,6 +83,25 @@
   }
 
 }
+
+
+.o-media--m {
+
+  > .o-media__img {
+    margin-right: $spacing-m;
+  }
+
+  &.o-media--reverse {
+
+    > .o-media__img {
+      margin-right: 0;
+      margin-left: $spacing-m;
+    }
+
+  }
+
+}
+
 
 
 .o-media--l {

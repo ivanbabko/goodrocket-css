@@ -117,6 +117,25 @@
 
 }
 
+
+.o-flag--m {
+
+  > .o-flag__img {
+    padding-right: $spacing-m;
+  }
+
+  &.o-flag--reverse {
+
+    > .o-flag__img {
+      padding-right: 0;
+      padding-left: $spacing-m;
+    }
+
+  }
+
+}
+
+
 .o-flag--l {
 
   > .o-flag__img {

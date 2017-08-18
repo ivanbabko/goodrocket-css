@@ -62,6 +62,10 @@
 /* Size variants.
    ========================================================================== */
 
+.o-pack--base {
+  border-spacing: $spacing;
+}
+
 .o-pack--xs {
   border-spacing: $spacing-xs;
 }
@@ -71,7 +75,7 @@
 }
 
 .o-pack--m {
-  border-spacing: $spacing;
+  border-spacing: $spacing-m;
 }
 
 .o-pack--l {

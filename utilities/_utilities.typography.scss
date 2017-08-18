@@ -4,14 +4,18 @@
 
    ========================================================================== */
 
-/**
- * Simple helpers to align text in our markup.
- */
+
+.u-font-family-primary {font-family: $font-family-primary;}
+.u-font-family-secondary {font-family: $font-family-secondary;}
+.u-font-family-tertiary {font-family: $font-family-tertiary;}
+
+.u-line-height-copy {line-height: $line-height-copy;}
+.u-line-height-title {line-height: $line-height-title;}
+.u-line-height-solid {line-height: $line-height-solid;}
 
 .u-text-left    {text-align: left;}
 .u-text-center  {text-align: center;}
 .u-text-right   {text-align: right;}
-
 
 
 // Responsive text alignment

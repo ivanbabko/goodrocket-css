@@ -34,6 +34,10 @@
       margin-bottom: $spacing-s;
     }
 
+    .o-block--m > & {
+      margin-bottom: $spacing-m;
+    }
+
     .o-block--l > & {
       margin-bottom: $spacing-l;
     }

@@ -135,6 +135,16 @@ $use-markup-fix: false !default;
 }
 
 
+.o-grid--m {
+  margin-left: -$spacing-s;
+
+  > .o-grid__item {
+    padding-left: $spacing-m;
+  }
+
+}
+
+
 .o-grid--l {
   margin-left: -$spacing-l;
 

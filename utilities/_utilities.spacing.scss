@@ -45,8 +45,10 @@ $spacing-sizes: (
   null: $spacing,
   '-xs': $spacing-xs,
   '-s': $spacing-s,
+  '-m': $spacing-m,
   '-l': $spacing-l,
   '-xl': $spacing-xl,
+  '-xxl': $spacing-xxl,
   '-none': 0,
 ) !default;
 

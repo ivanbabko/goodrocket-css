@@ -54,11 +54,11 @@
 // 5. Mixin for accessibly hiding elements.
 // 6. Mixin for writing media queries.
 
-@import "tools/tools.fs"; // [1]
-@import "tools/tools.c"; // [2]
-@import "tools/tools.z"; // [3]
+@import "tools/tools.font-size"; // [1]
+@import "tools/tools.color"; // [2]
+@import "tools/tools.z-index"; // [3]
 @import "tools/tools.clearfix"; // [4]
-@import "tools/tools.hide-visually"; // [5]
+@import "tools/tools.hide"; // [5]
 @import "tools/tools.mq"; // [6]
 
 
@@ -133,7 +133,6 @@
 // what these classes do when we look at the code (e.g., .c-btn).
 
 @import "components/components.icon"; // SVG icon styling
-//@import "components/components.button"; // Buttons!
 
 
 
@@ -155,12 +154,14 @@
 // 4. Spacing classes to nudge bits of the DOM around.
 // 5. Helper classes to hide content.
 // 6. Helper classes to align text horizontally.
-// 7. Utility classes for to manipulate block formatting context.
+// 7. Utility classes to manipulate block formatting context.
+// 8. Opacity utility classes.
 
 @import "utilities/utilities.clearfix"; // [1]
 @import "utilities/utilities.widths"; // [2]
 @import "utilities/utilities.font-sizes"; // [3]
 @import "utilities/utilities.spacing"; // [4]
 @import "utilities/utilities.hide"; // [5]
-@import "utilities/utilities.text-align"; // [6]
+@import "utilities/utilities.typography"; // [6]
 @import "utilities/utilities.bfc"; // [7]
+@import "utilities/utilities.opacity"; // [8]

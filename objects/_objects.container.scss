@@ -16,7 +16,7 @@ $container-width-xl     : 1600px !default;
 
 
 .o-container {
-  @include clearfix;
+  @include cf;
   //padding-right: $spacing;
   //padding-left:  $spacing;
   margin-right: auto;
