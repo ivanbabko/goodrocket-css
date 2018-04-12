@@ -6,9 +6,9 @@
 
 // Global color palette map. Accessed via custom c() function.
 // For example: `color: c(primary, light)`. Second argument is optional
-// because base value is used by default, so: `color: c(primary)` is valid. 
+// because base value is used by default, so: `color: c(primary)` is valid.
 //
-// Further reading: 
+// Further reading:
 // 1. http://erskinedesign.com/blog/friendlier-colour-names-sass-maps
 // 2. https://codepen.io/jakealbaugh/post/using-sass-functions-to-access-complex-variable-maps
 // 3. https://scotch.io/tutorials/aesthetic-sass-2-colors
@@ -19,9 +19,9 @@ $color-palette: (
 	// ============================================================================
 
 	'primary': (
-		'base'				: #673AB7,	
-		'light'				: #9575CD,	
-		'dark'				: #4527A0,	
+		'base'				: #673AB7,
+		'light'				: #9575CD,
+		'dark'				: #4527A0,
 	),
 
 	'accent': (
@@ -35,15 +35,15 @@ $color-palette: (
 	'info': (
 		'base'				: #005480,
 	),
-	
+
 	'warning': (
 		'base'				: #FEBA02,
 	),
-	
+
 	'danger': (
 		'base'				: #E52923,
 	),
-	
+
 	'success': (
 		'base'				: #55AF32,
 	),
@@ -51,7 +51,7 @@ $color-palette: (
 
 	// Grey scale
 	// ============================================================================
-	
+
 	'grey': (
 		'base'	:  #e0e0e0, // grey 30
 	  '05'		:  #fafafa,
