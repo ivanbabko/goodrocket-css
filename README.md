@@ -41,6 +41,7 @@ because a function or a mixin may require one of the global variables as a defau
 
 ```scss
 @import "tools/tools.font-size"; // Function to access global $type-scale map.
+@import "tools/tools.font-face"; // Implement cross-browser @font-face with the greatest of ease.
 @import "tools/tools.color"; // Function to access global $color-palette map.
 @import "tools/tools.z-index"; // Function to access global $z-layers map.
 @import "tools/tools.clearfix"; // Mixin for micro clearfix.

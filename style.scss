@@ -48,18 +48,20 @@
 // Note: this layer doesn not output any CSS.
 //
 // 1. Function to access font sizes defined in the global $type-scale map.
-// 2. Function to access colors defined in the global $colors map.
-// 3. Function to access z-index values defined in the global $z-layers map.
-// 4. Mixin for micro clearfix.
-// 5. Mixin for accessibly hiding elements.
-// 6. Mixin for writing media queries.
+// 2. Implement cross-browser @font-face with the greatest of ease.
+// 3. Function to access colors defined in the global $colors map.
+// 4. Function to access z-index values defined in the global $z-layers map.
+// 5. Mixin for micro clearfix.
+// 6. Mixin for accessibly hiding elements.
+// 7. Mixin for writing media queries.
 
 @import "tools/tools.font-size"; // [1]
-@import "tools/tools.color"; // [2]
-@import "tools/tools.z-index"; // [3]
-@import "tools/tools.clearfix"; // [4]
-@import "tools/tools.hide"; // [5]
-@import "tools/tools.mq"; // [6]
+@import "tools/tools.font-face"; // [2]
+@import "tools/tools.color"; // [3]
+@import "tools/tools.z-index"; // [4]
+@import "tools/tools.clearfix"; // [5]
+@import "tools/tools.hide"; // [6]
+@import "tools/tools.mq"; // [7]
 
 
 
