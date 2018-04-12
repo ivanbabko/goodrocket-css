@@ -77,7 +77,7 @@ $ratios: (
  *
  */
 
-@each $ratio-name, $ratio-value in $inuit-ratios {
+@each $ratio-name, $ratio-value in $ratios {
 
   @each $antecedent, $consequent in $ratio-value {
 
