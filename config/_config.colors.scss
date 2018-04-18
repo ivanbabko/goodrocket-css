@@ -20,8 +20,6 @@ $color-palette: (
 
 	'primary': (
 		'base'				: #673AB7,
-		'light'				: #9575CD,
-		'dark'				: #4527A0,
 	),
 
 	'accent': (
@@ -68,21 +66,16 @@ $color-palette: (
 	),
 
 
-	// Text colors
+	// Black & white
 	// ============================================================================
 
-	// Following recommendations from Google Material Design for our text color.
-	// https://material.io/guidelines/style/color.html#color-text-background-colors
-
-	// Dark text on light backgrounds
-	'text-dark': (
+	'black': (
 	  'base' 				: rgba(#000, 0.87),
 	  'secondary' 	: rgba(#000, 0.54),
 	  'tertiary' 		: rgba(#000, 0.38),
 	),
 
-	// Light text on dark backgrounds
-	'text-light': (
+	'white': (
 	  'base' 				: rgba(#fff, 1),
 	  'secondary' 	: rgba(#fff, 0.7),
 	  'tertiary'  	: rgba(#fff, 0.5),
@@ -93,7 +86,7 @@ $color-palette: (
 	// ============================================================================
 
 	'social': (
-		'base'				: #e0e0e0,  // base grey
+		'base'				: #e0e0e0,  // grey 30
 	  'dribbble'    : #ea4c89,
 	  'facebook'    : #3b5998,
 	  'flickr'      : #ff0084,
@@ -109,13 +102,4 @@ $color-palette: (
 	),
 
 );
-
-
-
-
-
-
-
-
-
 

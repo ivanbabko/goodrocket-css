@@ -62,6 +62,7 @@ using classes (more on that below).
 @import "generic/generic.box-sizing"; // Better default `box-sizing`.
 @import "generic/generic.reset"; // Combination of reset and normalize.
 @import "generic/generic.page"; // Page level setup.
+@import "generic/generic.font-face"; // @font-face declarations.
 ```
 
 ### Objects

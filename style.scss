@@ -79,10 +79,12 @@
 // 1. Better default `box-sizing`.
 // 2. Combination of reset and normalize.
 // 3. Simple page level setup.
+// 4. @font-face declarations.
 
 @import "generic/generic.box-sizing"; // [1]
 @import "generic/generic.reset"; // [2]
 @import "generic/generic.page"; // [3]
+@import "generic/generic.font-face"; // [4]
 
 
 
