@@ -145,8 +145,7 @@ sizes. Take a look at the example below.
 
 This resembles functional CSS approach promoted by frameworks like 
 [Tachyons](https://github.com/tachyons-css/tachyons/) or [Basscss](https://github.com/basscss/basscss),
-although we are not compiling our UI components solely from utility classes. 
-We utilize them only as an abstraction for commonly used and often overridden properties.
+although we are not compiling our UI components solely from utility classes. We utilize them to handle exceptions for often overridden properties.
 
 **Note:** Utility classes are prefixed with a `u-` to help us understand
 what these classes do when we look at the markup (e.g. `<div class="u-clearfix">`)
