@@ -1,5 +1,3 @@
-# Goodrocket CSS
-
 <a href="https://github.com/ivanbabko/goodrocket-css/archive/master.zip">
   <img src=".hero.png" alt="Goodrocket CSS"/>
 </a>
