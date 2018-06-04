@@ -1,10 +1,14 @@
-<a href="https://github.com/ivanbabko/goodrocket-css/archive/master.zip">
-  <img src=".hero.png" alt="Goodrocket CSS"/>
-</a>
+# Goodrocket CSS
 
 This is a design free CSS starting kit for writing modular, maintainable, and scalable CSS. 
 The aim is to provide a solid structure and sensible defaults to jump start the UI development
 and then be able to maintain the project without going nuts.
+
+<a href="https://github.com/ivanbabko/goodrocket-css/archive/master.zip">
+  <img src=".hero.png" alt="Goodrocket CSS"/>
+</a>
+
+<br/>
 
 Based on Sass preprocessor, BEM naming conventions, and OOCSS approach. A few 
 things were inspired by the ITCSS architecture and Inuitcss framework, which I extended and adapted to my development style.
