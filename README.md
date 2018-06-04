@@ -8,7 +8,7 @@ and then be able to maintain the project without going nuts.
   <img src=".hero.png" alt="Goodrocket CSS"/>
 </a>
 
-<br/>
+---
 
 Based on Sass preprocessor, BEM naming conventions, and OOCSS approach. A few 
 things were inspired by the ITCSS architecture and Inuitcss framework, which I extended and adapted to my development style.
